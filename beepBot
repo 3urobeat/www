@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<!--
+	Alpha by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>beepBot - 3urobeat</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+        <link rel="shortcut icon" href="https://images.discordapp.net/avatars/265162449441783808/d463807993496fd9d54b8ab41224cbca.png?size=512">
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<h1><a href="index">3urobeat</a></h1>
+					<nav id="nav">
+						<ul>
+							<li><i class="fa fa-home fa-fw"></i><a href="index">Home</a></li>
+							<li>
+								<a href="#" class="icon fa-angle-down">Navigation</a>
+								<ul>
+									<li><a href="info"> Information</a></li>
+									<li><a href="beepBot"> beepBot</a></li>
+									<li><a href="https://github.com/HerrEurobeat" target="_blank"> GitHub</a></li>
+                                    <li><a href="beepBot" class="icon fa-refresh">&nbsp;&nbsp;Refresh</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Main -->
+				<section id="main" class="container">
+					<header>
+						<h2>beepBot</h2>
+						<p>beepBot - A Discord bot that gets frequently updated and is 24/7 online.</p>
+					</header>
+					<div class="box">
+                        <h3><a href="https://discordapp.com/oauth2/authorize?client_id=265162449441783808&scope=bot&permissions=1610087551" target="_blank">Click me to invite my bot to your server!</a></h3>
+						<a href="https://discordapp.com/oauth2/authorize?client_id=265162449441783808&scope=bot&permissions=1610087551" target="_blank"><img src="https://images.discordapp.net/avatars/265162449441783808/d463807993496fd9d54b8ab41224cbca.png?size=512" alt="beepBot Avatar" style="float:right;width:151px;height:151px;"></a>
+                        <p>Get an overview of 60+ commands with *help or just <a href="https://github.com/HerrEurobeat/beepBot/blob/master/bin/help/helptext.txt" target="_blank">click here.</a><br>You can visit my bot on GitHub by <a href="https://github.com/HerrEurobeat/beepBot" target="_blank">clicking here.</a></p>
+						<p>Join my support server! <a href="https://discord.gg/AyWxpKb" target="_blank">Click me.</a></p>
+						<p>You can also find my bot on various discord bot lists. <br><a href="https://discordbots.org/bot/265162449441783808"target="_blank">discordbots.org</a> <br><a href="https://botsfordiscord.com/bots/265162449441783808"target="_blank">botsfordiscord.com</a> <br><a href="https://bots.discord.pw/bots/265162449441783808"target="_blank">bots.discord.pw</a> <br>...some more that i forgot.</p>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<ul class="copyright">
+						<li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+					</ul>
+				</footer>
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollgress.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
