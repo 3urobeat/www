@@ -12,7 +12,7 @@
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-        <link rel="shortcut icon" href="https://images.discordapp.net/avatars/265162449441783808/d463807993496fd9d54b8ab41224cbca.png?size=512">
+        <link rel="shortcut icon" href="https://cdn.discordapp.com/avatars/265162449441783808/effe05db69b875b55f7221ebe95320a6.png?size=2048">
 	</head>
 	<body>
 		<div id="page-wrapper">
@@ -44,9 +44,9 @@
 					</header>
 					<div class="box">
                         <h3><a href="https://discordapp.com/oauth2/authorize?client_id=265162449441783808&scope=bot&permissions=1610087551" target="_blank">Click me to invite my bot to your server!</a></h3>
-						<a href="https://discordapp.com/oauth2/authorize?client_id=265162449441783808&scope=bot&permissions=1610087551" target="_blank"><img src="https://images.discordapp.net/avatars/265162449441783808/d463807993496fd9d54b8ab41224cbca.png?size=512" alt="beepBot Avatar" style="float:right;width:151px;height:151px;"></a>
+						<a href="https://discordapp.com/oauth2/authorize?client_id=265162449441783808&scope=bot&permissions=1610087551" target="_blank"><img src="https://cdn.discordapp.com/avatars/265162449441783808/effe05db69b875b55f7221ebe95320a6.png?size=2048" alt="beepBot Avatar" style="float:right;width:151px;height:151px;"></a>
                         <p>Get an overview of 60+ commands with *help or just <a href="https://github.com/HerrEurobeat/beepBot/blob/master/bin/help/helptext.txt" target="_blank">click here.</a><br>You can visit my bot on GitHub by <a href="https://github.com/HerrEurobeat/beepBot" target="_blank">clicking here.</a></p>
-						<p>Join my support server! <a href="https://discord.gg/AyWxpKb" target="_blank">Click me.</a></p>
+						<p>Join my support server! <a href="https://discord.gg/YPDPPWT" target="_blank">Click me.</a></p>
 						<p>You can also find my bot on various discord bot lists. <br><a href="https://discordbots.org/bot/265162449441783808"target="_blank">discordbots.org</a> <br><a href="https://botsfordiscord.com/bots/265162449441783808"target="_blank">botsfordiscord.com</a> <br><a href="https://bots.discord.pw/bots/265162449441783808"target="_blank">bots.discord.pw</a> <br>...some more that i forgot.</p>
 					</div>
 				</section>
