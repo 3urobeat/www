@@ -26,7 +26,7 @@
 							<li>
 								<a href="#" class="icon fa-angle-down">Navigation</a>
 								<ul>
-									<li><a href="info"> Information</a></li>
+									<li><a href="steam-comment-service-bot"> Steam Comment Bot</a></li>
 									<li><a href="beepBot"> beepBot</a></li>
 									<li><a href="https://github.com/HerrEurobeat" target="_blank"> GitHub</a></li>
                                     <li><a href="index" class="icon fa-refresh">&nbsp;&nbsp;Refresh</a></li>
@@ -41,7 +41,7 @@
 					<h2>Homepage.</h2>
 					<p>You won't find much more here.</p>
 					<ul class="actions">
-						<li><a href="info" class="button">Information</a></li>
+						<li><a href="steam-comment-service-bot" class="button">Steam Comment Service Bot</a></li>
                         <li><a href="beepBot" class="button special">beepBot - my Discord Bot</a></li>
 						<li><a href="https://github.com/HerrEurobeat" class="button" target="_blank">GitHub</a></li>
 					</ul>
@@ -55,7 +55,7 @@
 							<b><a href="https://discord.gg/YPDPPWT" target="_blank">Click me to join!</a> <br><a href="https://discordapp.com/oauth2/authorize?client_id=265162449441783808&scope=bot&permissions=1610087551" target="_blank">Add my bot to your server!</a></b>
 						</header>
                         <p></p>
-                        <p><iframe src="https://discordapp.com/widget?id=331822220051611648&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe></p>
+                        <p><iframe src="https://discord.com/widget?id=331822220051611648&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe></p>
 					</section>
 
 			<!-- Footer -->
