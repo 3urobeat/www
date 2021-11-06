@@ -12,15 +12,15 @@ body {
 /* Text */
 div {
     color: #ffffff;
+    
     position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100px;
-    height: 150px;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 
+    text-align: left;
+    
     font-family: sans-serif;
     font-size: xx-large;
 }
@@ -29,14 +29,15 @@ div {
 /* Buttons */
 div2 {
     color: #ffffff;
+
     position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 530px;
-    height: 10px;
+    top: 45%;
+    margin-top: 70px; /* make sure that there is a fixed gap between the text and the buttons div so that they won't overlap when the window is really small */
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    white-space: nowrap;
 
     font-family: sans-serif;
     font-size: medium;
@@ -73,6 +74,8 @@ div2 {
     
     display:inline-block;
     margin-right:5px;
+
+    min-width: 150px; /* Force both buttons to be exactly the same width */
 }
 
 .button:hover {
@@ -89,6 +92,8 @@ div2 {
     background-color: #c9c9c9;
     border: none;
     color: #373737 !important;
+
+    min-width: 0px;
 }
 
 .button.special:hover {

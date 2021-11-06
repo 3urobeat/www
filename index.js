@@ -14,13 +14,13 @@ function fadeIn() {
 
 /* Let a cursor blink after finishing writing my name */
 function blink() {
-    fadeIn();
+    document.querySelector('.text').innerHTML = str + "&nbsp&nbsp"
 
     setInterval(() => {
         document.querySelector('.text').innerHTML = str + "_"
 
         setTimeout(() => {
-            document.querySelector('.text').innerHTML = str
+            document.querySelector('.text').innerHTML = str + "&nbsp&nbsp" //print two whitespaces to prevent text from moving
         }, 750);
     }, 1250);
 }
@@ -31,7 +31,7 @@ function randomChar() {
 }
 
 var frames   = 6;
-var interval = 60;
+var interval = 50;
 var chars    = "!<>-_—=+*^?#0123456789abcdefghijklmnopqrstuvwxyz"
 var text     = "3urobeat"
 
@@ -54,6 +54,8 @@ var frameinterval = setInterval(() => {
 
     if (str.length == text.length) {
         clearInterval(frameinterval)
-        blink()
+
+        blink(); //let cursor blink
+        fadeIn(); //let buttons fade in
     }
 }, interval);
