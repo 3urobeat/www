@@ -5,7 +5,7 @@ var opacity = 0;
 
 function fadeIn() {
     opacity += 0.1
-    document.getElementById("div2").style.opacity = opacity
+    document.getElementById("div-buttons").style.opacity = opacity
 
     setTimeout(() => {
         if (opacity < 1) fadeIn();
@@ -33,6 +33,13 @@ function randomChar() {
 
 /* Make sure the hamburger menu is collapsed on page load */
 document.getElementById("menu-checkbox").checked = false;
+
+/* Collapse hamburger menu when user clicks outside drawer */
+document.addEventListener('click', (event) => {
+    if (!event.composedPath().includes(document.querySelector('#hamburger-menu'))) {
+        document.getElementById("menu-checkbox").checked = false;
+    }
+})
 
 
 /* Start scrambling animation */

@@ -75,7 +75,7 @@ input[type="checkbox"] {
 
 
 /* Text */
-div {
+#div-text {
     color: #ffffff;
     
     position: absolute;
@@ -92,7 +92,7 @@ div {
 
 
 /* Buttons */
-div2 {
+#div-buttons {
     color: #ffffff;
 
     position: absolute;
