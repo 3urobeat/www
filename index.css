@@ -2,10 +2,75 @@
 
 /* Show background */
 body {
-    background-image:url('./images/background.gif');
-    background-size:100%;
+    background-image: url('./images/background.gif');
+    background-size: 100%;
     background-repeat: repeat-y;
     background-attachment: fixed;
+}
+
+/* Show hamburger menu | Credit for the general idea on how to do it: https://w3codepen.com/howto-html-css-hamburger-menu-icon/ & https://codepen.io/scott8035/pen/aEejrq */
+
+/* Set the size of the label around the hamburger to make clickable area bigger */
+#menu-label {
+    display: block;
+    position: relative;
+
+    top: 15px;
+    left: 10px;
+
+    height: 25px;
+    width: 32.5px;
+
+    cursor: pointer;
+}
+
+/* Show the slices of the hamburger */
+#menu-label span {
+    display: block;
+    position: relative;
+
+    top: 2.5px;
+
+    margin: 4px;
+    height: 4px;
+    width: 25px;
+
+    background: #7e7e7e;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+/* Hide checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Add animation when hamburger is clicked */
+#menu-checkbox:checked ~ #menu-label span:nth-child(1) {
+    -webkit-transform: rotate(135deg) translate(5px, -6.5px);
+    -moz-transform: rotate(135deg) translate(5px, -6.5px);
+    -o-transform: rotate(135deg) translate(5px, -6.5px);
+    transform: rotate(135deg) translate(5px, -6.5px);
+}
+
+#menu-checkbox:checked ~ #menu-label span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-checkbox:checked ~ #menu-label span:nth-child(3) {
+    -webkit-transform: rotate(-135deg) translate(5px, 6px);
+    -moz-transform: rotate(-135deg) translate(5px, 6px);
+    -o-transform: rotate(-135deg) translate(5px, 6px);
+    transform: rotate(-135deg) translate(5px, 6px);
+}
+
+#menu-label span {  
+    cursor: pointer; 
+    -webkit-transition: .20s ease-in-out;
+    -moz-transition: .20s ease-in-out;
+    -o-transition: .20s ease-in-out;
+    transition: .20s ease-in-out;
 }
 
 
@@ -72,8 +137,8 @@ div2 {
 
     background: rgba(226, 236, 248, 0.1);
     
-    display:inline-block;
-    margin-right:5px;
+    display: inline-block;
+    margin-right: 5px;
 
     min-width: 150px; /* Force both buttons to be exactly the same width */
 }

@@ -30,10 +30,16 @@ function randomChar() {
     return chars[Math.floor(Math.random() * chars.length)]
 }
 
+
+/* Make sure the hamburger menu is collapsed on page load */
+document.getElementById("menu-checkbox").checked = false;
+
+
+/* Start scrambling animation */
 var frames   = 6;
 var interval = 50;
-var chars    = "!<>-_—=+*^?#0123456789abcdefghijklmnopqrstuvwxyz"
-var text     = "3urobeat"
+var chars    = "!<>-_—=+*^?#0123456789abcdefghijklmnopqrstuvwxyz";
+var text     = "3urobeat";
 
 var currentframe = 0
 var i            = 0
