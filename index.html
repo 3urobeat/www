@@ -18,14 +18,32 @@
 
     <!-- Add items to body -->
     <body>
-        <input id="menu-checkbox" type="checkbox">
-        <label id="menu-label" for="menu-checkbox">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
 
-        <div class="container">
+        <!-- Hamburger Menu icon -->
+        <div id="hamburger-menu">
+            <input id="menu-checkbox" type="checkbox">
+            <label id="menu-label" for="menu-checkbox">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Hamburger Menu panel -->
+            <div id="menu-panel" hidden>
+                <ul id="menu-list">
+                    <li><a href="https://exo.3urobeat.com"><img src='https://exo.3urobeat.com/images/apple-touch-icon.png'/> UnionExodus Homepage</a></li>
+                    <br>
+                    <li><a href="https://github.com/HerrEurobeat"><img src='https://github.githubassets.com/favicons/favicon.png'/> GitHub</a></li>
+                    <li><a href="https://steamcommunity.com/id/3urobeat"><img src='https://steamcommunity.com/favicon.ico'/> Steam</a></li>
+                    <br>
+                    <!-- <li><a href="https://cloud.3urobeat.com"><img src='https://nextcloud.com/wp-content/themes/next/assets/img/common/favicon.png'/> NextCloud</a></li>
+                    <li><a href="https://dash.3urobeat.com"><img src='https://www.portainer.io/hubfs/Brand%20Assets/Favicon/Portainer%20BE%20Favicon%20icon.svg'/> Portainer</a></li>
+                    <li><a href="https://assist.3urobeat.com"><img src='https://www.home-assistant.io/images/favicon.ico'/> HomeAssistant</a></li> -->
+                </ul>
+            </div>
+        </div>
+
+
         <!-- Name div -->
         <div id="div-text">
             <div class="text"></div>
@@ -37,6 +55,7 @@
             <a href="https://github.com/HerrEurobeat" id="midbutton" class="button special">GitHub</a>
             <a href="https://steamcommunity.com/id/3urobeat" id="midbutton" class="button">Steam Profile</a>
         </div>
+
     </body>
 
 

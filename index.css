@@ -9,14 +9,22 @@ body {
 }
 
 /* Show hamburger menu | Credit for the general idea on how to do it: https://w3codepen.com/howto-html-css-hamburger-menu-icon/ & https://codepen.io/scott8035/pen/aEejrq */
+#hamburger-menu {
+    position: absolute;    
+    top: 0px;
+    left: 0px;
+
+    min-height: 100%;
+}
 
 /* Set the size of the label around the hamburger to make clickable area bigger */
 #menu-label {
     display: block;
     position: relative;
+    z-index: 999; /* Show always on top */
 
     top: 15px;
-    left: 10px;
+    left: 15px;
 
     height: 25px;
     width: 32.5px;
@@ -71,6 +79,64 @@ input[type="checkbox"] {
     -moz-transition: .20s ease-in-out;
     -o-transition: .20s ease-in-out;
     transition: .20s ease-in-out;
+}
+
+
+/* Hamburger Menu Panel */
+#menu-panel {
+    position: absolute;
+
+    top: 0px;
+    left: -125px;
+    width: 400px;
+
+    border-radius: 30%;
+    min-height: 100%;
+
+    background: rgba(104, 104, 104, 0.25);
+
+    padding-right: 75px; /* Add some padding so that you can't collapse the menu accidentally */
+}
+
+#menu-list {
+    list-style-type: none; /* Remove bullet points */
+}
+
+#menu-list li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+#menu-list li a {
+    -moz-transition: color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    position: relative;
+    white-space: nowrap;    
+
+    top: 60px;
+    left: 125px;
+
+    font-family: sans-serif;
+    font-size: large;
+
+    color: #bdbdbd;
+    text-decoration: none;
+}
+#menu-list li a:hover {
+    color: #ffffff;
+}
+#menu-list li a img {
+    height: 1em;
+    min-width: 1.5em; /* Set min width and tell image to scale down so that the text is in one nice line below each other */
+    object-fit: scale-down;
+}
+
+#menu-checkbox:checked ~ #menu-panel { /* Show drawer when hamburger icon is clicked */
+    display: block;
+
+    opacity: 1;
 }
 
 
