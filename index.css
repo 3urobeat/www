@@ -1,0 +1,100 @@
+/* Made by 3urobeat: https://github.com/HerrEurobeat/website */
+
+/* Show background */
+body {
+    background-image:url('./images/background.gif');
+    background-size:100%;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+}
+
+
+/* Text */
+div {
+    color: #ffffff;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 150px;
+
+    font-family: sans-serif;
+    font-size: xx-large;
+}
+
+
+/* Buttons */
+div2 {
+    color: #ffffff;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 530px;
+    height: 10px;
+
+    font-family: sans-serif;
+    font-size: medium;
+
+    opacity: 0; /* fadeIn function will handle this */
+}
+
+
+/* Style 1 */
+.button {
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    height: 3em;
+    line-height: 3em;
+    padding: 0 2em;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: #e9e9e9;
+    white-space: nowrap;
+
+    outline: #595959;
+    outline-width: 2px;
+
+    border: 2px solid black;
+    border-radius: 6px;
+    border-color: #6a6a6a;
+
+    background: rgba(226, 236, 248, 0.1);
+    
+    display:inline-block;
+    margin-right:5px;
+}
+
+.button:hover {
+    background-color: #737373;
+}
+
+.button:active {
+    background-color: #595959;
+}
+
+
+/* Style 2 */
+.button.special {
+    background-color: #c9c9c9;
+    border: none;
+    color: #373737 !important;
+}
+
+.button.special:hover {
+    background-color: #ffffff;
+}
+
+.button.special:active {
+    background-color: #ffffff;
+}
