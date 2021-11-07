@@ -1,5 +1,11 @@
 /* Made by 3urobeat: https://github.com/HerrEurobeat/website */
 
+/* Enable animations on body: https://stackoverflow.com/a/38296629/12934162 */
+setTimeout(function(){
+    document.body.className="";
+},500);
+
+
 /* Fade in function for our three buttons */
 var opacity = 0;
 

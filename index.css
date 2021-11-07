@@ -8,13 +8,21 @@ body {
     background-attachment: fixed;
 }
 
+/* Prevent animations on body (js will remove this after 500ms) https://stackoverflow.com/a/38296629/12934162 */
+body.preload * {
+    animation-duration: 0s !important;
+    -webkit-animation-duration: 0s !important;
+    transition:background-color 0s, opacity 0s, color 0s, width 0s, height 0s, padding 0s, margin 0s !important;
+}
+
+
 /* Show hamburger menu | Credit for the general idea on how to do it: https://w3codepen.com/howto-html-css-hamburger-menu-icon/ & https://codepen.io/scott8035/pen/aEejrq */
 #hamburger-menu {
     position: absolute;    
     top: 0px;
     left: 0px;
-
-    min-height: 100%;
+    width: 0px;
+    height: 0px;
 }
 
 /* Set the size of the label around the hamburger to make clickable area bigger */
@@ -82,30 +90,77 @@ input[type="checkbox"] {
 }
 
 
-/* Hamburger Menu Panel */
-#menu-panel {
-    position: absolute;
+/* Hamburger Menu Panel - Animations: */
+@-webkit-keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
 
-    top: 0px;
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+    }
+}
+
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+}
+
+/* Show background of menu-panel, make edges round and move it to the top left to only show the bottom right round corner */
+#menu-panel {
+    position: relative;
+
+    top: -200px;
     left: -125px;
+    height: 600px;
     width: 400px;
 
     border-radius: 30%;
-    min-height: 100%;
-
     background: rgba(104, 104, 104, 0.25);
 
-    padding-right: 75px; /* Add some padding so that you can't collapse the menu accidentally */
+    padding-right: 75px; /* Add some padding so that you can't collapse the menu accidentally */    
 }
 
+/* Remove bullet points of list */
 #menu-list {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none;
 }
 
+/* Add margin between entries in list except for last entry */
 #menu-list li:not(:last-child) {
     margin-bottom: 5px;
 }
 
+/* Fade in elements in list and move them to the bottom right (since we moved the div to the top left) */
 #menu-list li a {
     -moz-transition: color 0.2s ease-in-out, color 0.2s ease-in-out;
     -webkit-transition: color 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -115,7 +170,7 @@ input[type="checkbox"] {
     position: relative;
     white-space: nowrap;    
 
-    top: 60px;
+    top: 225px;
     left: 125px;
 
     font-family: sans-serif;
@@ -124,19 +179,44 @@ input[type="checkbox"] {
     color: #bdbdbd;
     text-decoration: none;
 }
+
+/* Hover animation for elements in list */
 #menu-list li a:hover {
     color: #ffffff;
 }
+
+/* Set size of images in the entries */
 #menu-list li a img {
     height: 1em;
     min-width: 1.5em; /* Set min width and tell image to scale down so that the text is in one nice line below each other */
     object-fit: scale-down;
 }
 
+/* Show the panel when the hamburger menu icon is clicked */
 #menu-checkbox:checked ~ #menu-panel { /* Show drawer when hamburger icon is clicked */
     display: block;
 
-    opacity: 1;
+    /* Add animation to panel open & close */
+    -webkit-animation-duration: .40s;
+    animation-duration: .40s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+
+/* Hide the panel when the hamburger menu icon is clicked */
+#menu-checkbox:not(:checked) ~ #menu-panel {
+    display: flex;
+    
+    -webkit-animation-duration: .40s;
+    animation-duration: .40s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+
+    -webkit-animation-name: fadeOutLeft;
+    animation-name: fadeOutLeft;
 }
 
 
