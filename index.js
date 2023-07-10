@@ -1,4 +1,4 @@
-/* Made by 3urobeat: https://github.com/HerrEurobeat/website */
+/* Made by 3urobeat: https://github.com/3urobeat/website */
 
 /* Enable animations on body: https://stackoverflow.com/a/38296629/12934162 */
 setTimeout(function(){
