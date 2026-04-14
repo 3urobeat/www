@@ -1,10 +1,11 @@
+<!--
 /*
- * File: style.css
+ * File: app.vue
  * Project: www
- * Created Date: 2026-04-14 18:28:23
+ * Created Date: 2026-04-14 18:27:48
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:28
+ * Last Modified: 2026-04-14 18:27:53
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -13,32 +14,14 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
  * You should have received a copy of the GNU Affero General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
+-->
 
 
-@import "tailwindcss";
+<template>
+    Hello!
+</template>
 
 
-/* Apply global background */
-@layer base {
-    body {
-        @apply bg-bg-light dark:bg-bg-dark transition-colors;
-    }
-}
+<script setup lang="ts">
 
-
-/* Dark Mode */
-@custom-variant dark (&:where(.dark, .dark *));
-
-@layer base {
-    button:not(:disabled),
-    [role="button"]:not(:disabled) {
-        cursor: pointer;
-    }
-}
-
-
-/* Colors */
-@theme {
-    --color-bg-light: #f8f9fa;
-    --color-bg-dark: #181a1b;
-}
+</script>

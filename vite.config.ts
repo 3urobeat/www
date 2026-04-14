@@ -1,10 +1,10 @@
 /*
- * File: style.css
+ * File: vite.config
  * Project: www
- * Created Date: 2026-04-14 18:28:23
+ * Created Date: 2026-04-14 18:28:52
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:28
+ * Last Modified: 2026-04-14 18:28:57
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -15,30 +15,15 @@
  */
 
 
-@import "tailwindcss";
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import tailwindcss from "@tailwindcss/vite";
 
 
-/* Apply global background */
-@layer base {
-    body {
-        @apply bg-bg-light dark:bg-bg-dark transition-colors;
-    }
-}
-
-
-/* Dark Mode */
-@custom-variant dark (&:where(.dark, .dark *));
-
-@layer base {
-    button:not(:disabled),
-    [role="button"]:not(:disabled) {
-        cursor: pointer;
-    }
-}
-
-
-/* Colors */
-@theme {
-    --color-bg-light: #f8f9fa;
-    --color-bg-dark: #181a1b;
-}
+// https://vite.dev/config/
+export default defineConfig({
+    plugins: [
+        tailwindcss(),
+        vue(),
+    ],
+});
