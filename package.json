@@ -15,6 +15,7 @@
   },
   "author": "3urobeat",
   "dependencies": {
+    "@phosphor-icons/vue": "^2.2.1",
     "@tailwindcss/vite": "^4.2.2",
     "tailwindcss": "^4.2.2",
     "vue": "^3.5.32"

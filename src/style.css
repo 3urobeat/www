@@ -1,10 +1,10 @@
 /*
  * File: style.css
  * Project: www
- * Created Date: 2026-04-14 18:28:23
+ * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:28
+ * Last Modified: 2026-05-24 15:49:36
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -18,12 +18,101 @@
 @import "tailwindcss";
 
 
-/* Apply global background */
 @layer base {
     body {
-        @apply bg-bg-light dark:bg-bg-dark transition-colors;
+        @apply bg-bg-light dark:bg-bg-dark transition-colors text-text-light dark:text-text-dark font-sans overflow-hidden;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+
+    /* Hides no JS warning */
+    html.js #js-disabled-banner {
+        display: none;
+    }
+
+    /* Loading Animation from https://css-loaders.com/spinner/ */
+    .loader {
+        width: 50px;
+        padding: 8px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--color-wardrobe-blue);
+        --_m:
+            conic-gradient(#0000 10%,#000),
+            linear-gradient(#000 0 0) content-box;
+        -webkit-mask: var(--_m);
+                mask: var(--_m);
+        -webkit-mask-composite: source-out;
+                mask-composite: subtract;
+        animation: l3 1s infinite linear;
+    }
+    @keyframes l3 {to{transform: rotate(1turn)}}
+
+
+    /* Typing animation from https://freefrontend.com/css-typing-text/ - https://codepen.io/css-support/pen/AjGdmM */
+    @-webkit-keyframes typing { from { width: 0; } }
+    @-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+    .typing-animation {
+        border-right: .1em solid black;
+        white-space: nowrap;
+        overflow: hidden;
+        -webkit-animation: typing 2s steps(21, end), blink-caret .5s step-end infinite alternate;
     }
 }
+
+
+/* Colors */
+@theme {
+    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+    --color-bg-light: #f8f9fa;
+    --color-bg-dark: #181a1b;
+    --color-bg-secondary-light: #e9ecef;
+
+    --color-bg-input-click-light: #c0c0c2;
+    --color-bg-input-click-dark: #2f3335;
+    --color-bg-input-hover-light: #d9dadc;
+    --color-bg-input-hover-dark: #25282a;
+    --color-bg-input-light: #e8e9eb;
+    --color-bg-input-dark: #202224;
+
+    --color-bg-field-click-light: #d3d4d6;
+    --color-bg-field-click-dark: #333639;
+    --color-bg-field-hover-light: #e2e3e5;
+    --color-bg-field-hover-dark: #242628;
+    --color-bg-field-light: #f2f3f4;
+    --color-bg-field-dark: #2a2d2f;
+
+    --color-bg-embed-hover-dark: #26292b;
+    --color-bg-embed-light: #d6dce4;
+    --color-bg-embed-dark: #242729;
+
+    --color-text-light: #1a1a2e;
+    --color-text-dark: #e8e6e3;
+
+    --color-text-secondary-dark: #bdbdbd;
+    --color-text-secondary-light: #4a5565; /* or #6c757d ? */
+
+    --color-text-muted: #adb5bd;
+
+    --color-border-primary-light: #585c63; /* TODO: Where is this used? custom-input-primary uses secondary border but custom-input-secondary uses this primary one, bit weird */
+    --color-border-primary-dark: #565d5f;
+
+    --color-border-secondary-light: #9198a3;
+    --color-border-secondary-dark: #697274;
+
+    --color-accent: #6366f1;
+    --color-accent-hover: #4f46e5;
+
+}
+
+
+/* Color combinations */
+/* TODO: Pre-made combinations of "x-light dark:x-dark" would clean up so much */
 
 
 /* Dark Mode */
@@ -37,8 +126,45 @@
 }
 
 
-/* Colors */
-@theme {
-    --color-bg-light: #f8f9fa;
-    --color-bg-dark: #181a1b;
+/* Reusable Custom Components */
+
+/* Primary button, used in various places on <button> container. Put Icon and Text inside. */
+.custom-button-primary {
+    @apply flex items-center justify-center h-8 py-1 px-3 rounded-md shadow-md cursor-pointer bg-bg-input-light dark:bg-bg-input-dark outline-border-primary-light dark:outline-border-primary-dark outline-2 hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark hover:transition-all disabled:bg-bg-input-hover-light disabled:dark:bg-bg-input-hover-dark disabled:cursor-not-allowed;
+}
+
+/* Small square button without text, used on <button> container. Put Icon inside. */
+.custom-button-icon-only {
+    @apply p-1 rounded-md shadow-md bg-bg-input-light dark:bg-bg-input-dark outline-border-primary-light dark:outline-border-primary-dark outline-2 hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark hover:transition-all disabled:bg-bg-input-hover-light disabled:dark:bg-bg-input-hover-dark disabled:cursor-not-allowed;
+}
+
+.custom-button-icon-only-secondary {
+    @apply p-1 rounded-md shadow-md bg-bg-field-light dark:bg-bg-field-dark outline-border-secondary-light dark:outline-border-secondary-dark outline-2 hover:bg-bg-field-hover-light hover:dark:bg-bg-field-hover-dark hover:transition-all active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark disabled:bg-bg-field-hover-light disabled:dark:dark:bg-bg-field-hover-dark disabled:cursor-not-allowed;
+}
+
+/* Primary label to display text */
+.custom-label-primary {
+    @apply py-1 px-3 rounded-md shadow-md bg-bg-field-light dark:bg-bg-field-dark;
+}
+
+.custom-label-secondary {
+    @apply py-1 px-3 rounded-md shadow-md bg-bg-input-light dark:bg-bg-input-dark;
+}
+
+/* Small square label to display icon without text. Put Icon inside. */
+.custom-label-icon-only {
+    @apply p-1 rounded-md shadow-md bg-bg-field-light dark:bg-bg-field-dark;
+}
+
+/* These two define a custom grid for displaying items with desktop/mobile scaling. See dynamicTailwindHelper for the scaling mapping. */
+.custom-items-grid {
+    @apply grid gap-x-4 gap-y-6 md:gap-x-6 md:gap-y-10
+}
+.custom-items-grid-card {
+    @apply @container aspect-square md:aspect-auto rounded-2xl shadow-lg select-none bg-bg-input-light dark:bg-bg-input-dark hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark hover:transition-all
+}
+
+
+.content-clip {
+    clip-path: url(#contentClip);
 }
