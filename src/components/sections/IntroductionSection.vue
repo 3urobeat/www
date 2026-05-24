@@ -1,11 +1,11 @@
 <!--
 /*
- * File: index.html
+ * File: IntroductionSection.vue
  * Project: www
- * Created Date: 2026-04-14 18:28:09
+ * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:09
+ * Last Modified: 2026-05-24 15:42:59
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -17,16 +17,20 @@
 -->
 
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>3urobeat - Portfolio</title>
-    </head>
-    <body>
-        <div id="app"></div>
-        <script type="module" src="/src/main.ts"></script>
-    </body>
-</html>
+<template>
+
+    <SectionContainer anchor-id="intro">
+
+        <template v-slot:content>
+
+        </template>
+
+    </SectionContainer>
+
+</template>
+
+
+<script setup lang="ts">
+    import SectionContainer from "../SectionContainer.vue";
+
+</script>
