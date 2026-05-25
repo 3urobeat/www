@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-24 15:46:01
+ * Last Modified: 2026-05-25 22:58:11
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -19,6 +19,12 @@
 
 <template>
 
+    <header id="titlebar" class="z-50">
+        <TitleBar />
+    </header>
+
+
+    <main>
     <!-- Left Side - Page Content -->
     <div class="fixed inset-0 content-clip" id="left-content">
         <div ref="scrollContainer" class="h-full overflow-y-auto scroll-smooth">

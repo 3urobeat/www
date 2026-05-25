@@ -1,11 +1,10 @@
-<!--
 /*
- * File: index.html
+ * File: storage.ts
  * Project: www
- * Created Date: 2026-04-14 18:28:09
+ * Created Date: 2026-05-25 22:33:56
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:09
+ * Last Modified: 2026-05-25 22:34:23
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -14,23 +13,19 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
  * You should have received a copy of the GNU Affero General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
--->
 
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+/*
+ * UX Settings - Stored in localStorage, see utils/storage.ts
+ */
 
-        <!-- Include global script. Load after css to fix styling issues on page load -->
-        <script src="/global.js"></script>
+export const UXSettingsName = "uxSettings";
 
-        <title>3urobeat - Portfolio</title>
-    </head>
-    <body>
-        <div id="app"></div>
-        <script type="module" src="/src/main.ts"></script>
-    </body>
-</html>
+// UX settings stored in user's browser
+export type UXSettings = {
+    darkModeEnabled: boolean | null // Boolean if user changed dark mode, null if automatic
+}
+
+export const defaultUXSettings: UXSettings = {
+    darkModeEnabled: null,
+};
