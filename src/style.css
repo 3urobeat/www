@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-24 22:27:21
+ * Last Modified: 2026-05-24 22:28:41
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -16,6 +16,7 @@
 
 
 @import "tailwindcss";
+@import "tailwindcss-intersect";
 
 
 @layer base {

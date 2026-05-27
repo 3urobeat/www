@@ -18,5 +18,9 @@
 import { createApp } from "vue";
 import "./style.css";
 import app from "./app.vue";
+import { Observer } from "tailwindcss-intersect";
 
 createApp(app).mount("#app");
+
+// Register intersection observer - https://github.com/heidkaemper/tailwindcss-intersect
+Observer.start();
