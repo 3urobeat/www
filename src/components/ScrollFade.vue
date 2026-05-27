@@ -1,11 +1,11 @@
 <!--
 /*
- * File: SectionContainer.vue
+ * File: ScrollFade.vue
  * Project: www
- * Created Date: 2026-05-24 12:40:31
+ * Created Date: 2026-05-23 17:30:45
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-27 22:35:11
+ * Last Modified: 2026-05-27 22:35:04
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -18,34 +18,11 @@
 
 
 <template>
-
-    <section :id="anchorId" class="min-h-screen pl-6 md:pl-10 lg:pl-12 xl:pl-24 py-24 w-2/3 md:w-1/2">
-        <ScrollFade>
-
-            <h2 class="text-4xl lg:text-5xl font-semibold text-text-primary">
-                <slot name="title" />
-            </h2>
-
-            <p class="mt-3 text-lg text-text-secondary">
-                <slot name="description" />
-            </p>
-
-            <slot name="content" />
-
-        </ScrollFade>
-    </section>
-
+    <!-- Use no-intersect to trigger on page load, see: https://github.com/heidkaemper/tailwindcss-intersect/issues/9 -->
+    <div
+        class="transition-all duration-1000 ease-out opacity-0 translate-y-8 intersect:opacity-100 intersect:translate-y-0 intersect-once"
+        no-intersect
+    >
+        <slot />
+    </div>
 </template>
-
-
-<script setup lang="ts">
-    import ScrollFade from "./ScrollFade.vue";
-
-    const props = defineProps({
-        anchorId: {
-            type: String,
-            required: true
-        },
-    })
-
-</script>
