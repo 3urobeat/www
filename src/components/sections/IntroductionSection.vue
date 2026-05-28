@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-24 21:48:36
+ * Last Modified: 2026-05-28 17:29:40
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -22,7 +22,7 @@
     <SectionContainer anchor-id="intro">
 
         <template v-slot:content>
-            <div class="flex flex-col lg:flex-row lg:items-center lg:-mt-24 gap-y-10 min-h-screen">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:-mt-24 gap-y-10 min-h-screen"> <!-- -mt-24 is to compensate SectionContainer's top offset when using items-center -->
 
                 <!-- Avatar -->
                 <div class="order-first lg:order-last size-32 lg:size-50 xl:size-65 rounded-full overflow-hidden shrink-0 ring-2 ring-white/10 shadow-lg">
@@ -33,7 +33,7 @@
                     />
                 </div>
 
-                <div class="lg:w-2/3 shrink-0">
+                <div class="lg:w-3/4 shrink-0">
                     <!-- Introduction -->
                     <h1 class="flex flex-col gap-2 text-4xl sm:text-5xl xl:text-6xl font-semibold text-shadow-md">
                         <span>Hi, I am </span>
@@ -68,7 +68,7 @@
     import SectionContainer from "../SectionContainer.vue";
 
     const navLinks = [
-        { id: "software", label: "Full-Stack Software Developer" },
+        { id: "software", label: "Full Stack Software Developer" },
         { id: "sysadmin", label: "Linux System Admin" },
         { id: "music", label: "Music Producer" },
     ];

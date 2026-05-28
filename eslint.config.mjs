@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:28:42
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:46
+ * Last Modified: 2026-05-24 12:20:34
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -16,7 +16,7 @@
 
 
 /*
-    3urobeat's EsLint Config (TypeScript + Vue Variant). Requires globals, eslint, @eslint/js, eslint-plugin-jsdoc, typescript, typescript-eslint & @typescript-eslint/parser to be installed as devDependencies.
+    3urobeat's EsLint Config (TypeScript + Vue Variant). Requires eslint, @eslint/js, eslint-plugin-jsdoc, typescript, typescript-eslint & @typescript-eslint/parser to be installed as devDependencies.
     https://github.com/3urobeat
 */
 
@@ -56,7 +56,7 @@ export default [
 
             // Styling
             "camelcase": "warn",
-            "capitalized-comments": ["warn", "always", { "ignoreConsecutiveComments": true }],
+            // "capitalized-comments": ["warn", "always", { "ignoreConsecutiveComments": true }], // Gets a little annoying
             "comma-spacing": ["warn", { "before": false, "after": true }],
             "func-call-spacing": ["error", "never"],
             "indent": ["error", 4, { "ignoredNodes": ["IfStatement"], "SwitchCase": 1 }], // TODO: This also ignores if statements with wrong indentation but I couldn't get it to only ignore else in if-else one-liner

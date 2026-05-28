@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-24 22:28:41
+ * Last Modified: 2026-05-28 17:29:45
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -33,49 +33,6 @@
     /* Hides no JS warning */
     html.js #js-disabled-banner {
         display: none;
-    }
-
-    /* Loading Animation from https://css-loaders.com/spinner/ */
-    .loader {
-        width: 50px;
-        padding: 8px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-        background: var(--color-wardrobe-blue);
-        --_m:
-            conic-gradient(#0000 10%,#000),
-            linear-gradient(#000 0 0) content-box;
-        -webkit-mask: var(--_m);
-                mask: var(--_m);
-        -webkit-mask-composite: source-out;
-                mask-composite: subtract;
-        animation: l3 1s infinite linear;
-    }
-    @keyframes l3 {to{transform: rotate(1turn)}}
-
-
-    /* Typing animation – repeats with fade-back every 10s */
-    @keyframes typing {
-        0%   { width: 0; opacity: 0; }
-        4%   { width: 0; opacity: 1; }
-        8%   { width: 1.3ch; opacity: 1; } /* Added .3 to avoid cursor clipping into text */
-        12%  { width: 2.3ch; opacity: 1; }
-        16%  { width: 3.3ch; opacity: 1; }
-        20%  { width: 4.3ch; opacity: 1; }
-        24%  { width: 5.3ch; opacity: 1; }
-        78%  { width: 5.3ch; opacity: 1; }
-        90%  { width: 0; opacity: 0; }
-        100% { width: 0; opacity: 0; }
-    }
-
-    @keyframes blink-caret { 50% { border-color: transparent; } }
-
-    .typing-animation {
-        border-right: .2ch solid black;
-        white-space: nowrap;
-        display: inline-flex;
-        overflow: hidden;
-        animation: typing 7s infinite, blink-caret 1s steps(1, end) infinite;
     }
 }
 
@@ -175,6 +132,58 @@
 }
 .custom-items-grid-card {
     @apply @container aspect-square md:aspect-auto rounded-2xl shadow-lg select-none bg-bg-input-light dark:bg-bg-input-dark hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark hover:transition-all
+}
+
+
+/* Loading Animation from https://css-loaders.com/spinner/ */
+.loader {
+    width: 50px;
+    padding: 8px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-wardrobe-blue);
+    --_m:
+        conic-gradient(#0000 10%,#000),
+        linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+            mask: var(--_m);
+    -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+    animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}
+
+
+/* Typing animation – repeats with fade-back every 10s */
+@keyframes typing {
+    0%   { width: 0; opacity: 0; }
+    4%   { width: 0; opacity: 1; }
+    8%   { width: 1.3ch; opacity: 1; } /* Added .3 to avoid cursor clipping into text */
+    12%  { width: 2.3ch; opacity: 1; }
+    16%  { width: 3.3ch; opacity: 1; }
+    20%  { width: 4.3ch; opacity: 1; }
+    24%  { width: 5.3ch; opacity: 1; }
+    78%  { width: 5.3ch; opacity: 1; }
+    90%  { width: 0; opacity: 0; }
+    100% { width: 0; opacity: 0; }
+}
+
+@keyframes blink-caret { 50% { border-color: transparent; } }
+
+.typing-animation {
+    border-right: .2ch solid black;
+    white-space: nowrap;
+    display: inline-flex;
+    overflow: hidden;
+    animation: typing 7s infinite, blink-caret 1s steps(1, end) infinite;
+}
+
+
+/* Count animation from https://freefrontend.com/tailwind-counter/ - https://codepen.io/cruip/pen/jOXzrJq */
+@property --count-animation {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
 }
 
 

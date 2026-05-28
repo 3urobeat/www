@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-25 22:58:11
+ * Last Modified: 2026-05-28 17:29:35
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -25,22 +25,23 @@
 
 
     <main>
-    <!-- Left Side - Page Content -->
-    <div class="fixed inset-0 content-clip" id="left-content">
-        <div ref="scrollContainer" class="h-full overflow-y-auto scroll-smooth">
-            <IntroductionSection />
+        <!-- Left Side - Page Content -->
+        <div class="fixed inset-0 z-10 content-clip bg-bg-light dark:bg-bg-dark" id="left-content">
+            <div ref="scrollContainer" class="h-full overflow-y-auto scroll-smooth">
+                <IntroductionSection />
 
-            <SoftwareSection />
+                <SoftwareSection />
 
-            <SysAdminSection />
+                <SysAdminSection />
 
-            <MusicSection />
+                <MusicSection />
+            </div>
         </div>
-    </div>
 
 
-    <!-- Squiggly Divider Line -->
-    <!-- TODO -->
+        <!-- Squiggly Divider Line -->
+        <!-- TODO -->
+    </main>
 
 
     <!-- Footer -->
@@ -80,5 +81,6 @@
     import packagejson from "../package.json";
     import IntroductionSection from "./components/sections/IntroductionSection.vue";
     import { PhArrowUp } from "@phosphor-icons/vue";
+    import TitleBar from "./components/TitleBar.vue";
 
 </script>
