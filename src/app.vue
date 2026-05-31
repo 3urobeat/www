@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-31 11:51:58
+ * Last Modified: 2026-05-31 12:27:47
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -40,7 +40,40 @@
 
 
         <!-- Squiggly Divider Line -->
-        <!-- TODO -->
+        <svg
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+            class="fixed inset-0 w-full h-full pointer-events-none z-20"
+            aria-hidden="true"
+        >
+            <defs>
+                <filter id="dividerGlow">
+                    <feGaussianBlur stdDeviation="1.5" result="blur" />
+                    <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                </filter>
+            </defs>
+
+            <path
+                d="M 40,-1 C 45,10 50,20 66.7,33.3 C 75,45 82,60 80,72 C 78,82 90,88 95,101"
+                stroke="var(--color-text-muted, #adb5bd)"
+                stroke-width="1.5"
+                fill="none"
+                opacity="0.5"
+                filter="url(#dividerGlow)"
+            />
+        </svg>
+
+        <!-- Squiggly Divider Border. Path follows path above, roughly divided by 100 -->
+        <svg aria-hidden="true" class="absolute w-0 h-0 pointer-events-none" id="right-bg">
+            <defs>
+                <clipPath id="contentClip" clipPathUnits="objectBoundingBox">
+                    <path d="M 0,0 L 0.36,-0.1 C 0.44,0.10 0.50,0.20 0.667,0.333 C 0.75,0.45 0.82,0.60 0.80,0.72 C 0.78,0.82 0.90,0.88 0.95,1.01 L 0,1 Z" />
+                </clipPath>
+            </defs>
+        </svg>
     </main>
 
 
