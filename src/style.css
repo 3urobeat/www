@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-28 17:30:23
+ * Last Modified: 2026-05-31 11:51:54
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -21,7 +21,7 @@
 
 @layer base {
     body {
-        @apply transition-colors text-text-light dark:text-text-dark overflow-hidden;
+        @apply text-text-light dark:text-text-dark overflow-hidden;
     }
 
     html {
