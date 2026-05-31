@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-28 17:29:40
+ * Last Modified: 2026-05-31 12:50:26
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -38,7 +38,7 @@
                     <h1 class="flex flex-col gap-2 text-4xl sm:text-5xl xl:text-6xl font-semibold text-shadow-md">
                         <span>Hi, I am </span>
                         <span>
-                            <span class="text-gray-400 typing-animation">Tomke</span>, a
+                            <span class="text-text-variable typing-animation">Tomke</span>, a
                         </span>
                     </h1>
 
@@ -48,7 +48,7 @@
                             v-for="link in navLinks"
                             :key="link.id"
                             :href="`#${link.id}`"
-                            class="group flex items-center gap-2 text-base sm:text-lg text-text-secondary hover:text-accent transition-colors"
+                            class="group flex items-center gap-2 text-base sm:text-lg hover:text-accent transition-colors"
                         >
                             <span class="w-6 h-px bg-text-muted group-hover:w-12 group-hover:bg-accent transition-all duration-300"></span>
                             {{ link.label }}
