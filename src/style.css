@@ -67,6 +67,8 @@
     --color-text-secondary-dark: #bdbdbd;
     --color-text-secondary-light: #4a5565; /* or #6c757d ? */
 
+    --color-text-variable: #99a1af; /* gray-400 */
+
     --color-text-muted: #adb5bd;
 
     --color-border-primary-light: #585c63; /* TODO: Where is this used? custom-input-primary uses secondary border but custom-input-secondary uses this primary one, bit weird */

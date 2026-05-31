@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-30 21:49:46
+ * Last Modified: 2026-05-31 12:59:58
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -27,19 +27,19 @@
         <div
             v-for="(thisCard, index) in cards"
             :key="thisCard.title"
-            class="cursor-pointer duration-700 ease-in-out grow m-2 min-h-14 sm:min-w-14 overflow-hidden pane relative rounded-3xl transition-all"
+            class="cursor-pointer duration-500 ease-in-out grow m-2 min-h-14 sm:min-w-14 shadow-md overflow-hidden pane relative rounded-3xl transition-all"
             :class="index == activePaneIndex ? 'active' : ''"
             @click="activePaneIndex = index"
         >
             <!-- Background & Fade -->
             <div
-                class="absolute bg-center bg-cover bg-yellow-img bg-no-repeat inset-0 scale-105 z-10"
+                class="absolute bg-center bg-cover bg-yellow-img bg-no-repeat inset-0 scale-105 opacity-50 z-10"
                 :class="thisCard.color"
             ></div>
-            <div class="absolute bg-linear-to-b bottom-0 duration-700 ease-in-out from-transparent h-1/2 inset-x-0 to-black transform translate-y-1/2 z-20"></div>
+            <div class="absolute bg-linear-to-b bottom-0 duration-500 ease-in-out from-transparent h-1/2 inset-x-0 to-black transform translate-y-1/2 z-20"></div>
 
             <!-- Elements -->
-            <div class="absolute bottom-0 duration-700 ease-in-out flex label left-0 mb-2 ml-3 sm:mb-3 sm:ml-2 z-30">
+            <div class="absolute bottom-0 duration-500 ease-in-out flex label left-0 mb-2 ml-3 sm:mb-3 sm:ml-2 z-30">
 
                 <!-- Icon -->
                 <div
@@ -108,6 +108,6 @@
             type: Array as PropType<AccordionCard[]>,
             required: true
         }
-    })
+    });
 
 </script>

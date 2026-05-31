@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-31 12:27:47
+ * Last Modified: 2026-05-31 16:33:17
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -26,7 +26,7 @@
 
     <main>
         <!-- Left Side - Page Content -->
-        <div class="fixed inset-0 z-10 content-clip bg-bg-light dark:bg-bg-dark transition-colors" id="left-content">
+        <div class="fixed inset-0 content-clip bg-bg-light dark:bg-bg-dark transition-colors" id="left-content">
             <div ref="scrollContainer" class="h-full overflow-y-auto scroll-smooth">
                 <IntroductionSection />
 
