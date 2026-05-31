@@ -135,6 +135,17 @@
 }
 
 
+/* Liquid glass effect */
+.custom-glass-pill {
+    @apply backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 40%, rgba(255,255,255,0.05) 100%);
+}
+
+.dark .custom-glass-pill {
+    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.01) 100%);
+}
+
+
 /* Loading Animation from https://css-loaders.com/spinner/ */
 .loader {
     width: 50px;

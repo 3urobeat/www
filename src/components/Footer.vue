@@ -5,7 +5,7 @@
  * Created Date: 2026-05-31 11:11:37
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-31 11:16:33
+ * Last Modified: 2026-05-31 12:06:29
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -20,24 +20,26 @@
 <template>
 
     <!-- Go Up Button -->
-    <a class="fixed right-5 bottom-5 custom-button-icon-only rounded-4xl!" href="#intro">
-        <PhArrowUp class="size-7 p-1 fill-text-light dark:fill-text-dark" />
+    <a class="fixed right-5 bottom-5 custom-glass-pill p-1 rounded-4xl! text-bg-light hover:text-bg-input-hover-light hover:transition-all" href="#intro">
+        <PhArrowUp class="size-7 p-1" />
     </a>
 
     <!-- Project Details -->
-    <div class="flex flex-col text-sm left-0 group opacity-50">
-        www v{{ packagejson.version }}
+    <div class="custom-glass-pill rounded-2xl px-3 py-1.5">
+        <div class="flex flex-col text-sm group opacity-50 duration-500 transition-all">
+            www v{{ packagejson.version }}
 
-        <a class="flex w-fit items-center mt-0.5 -ml-1 rounded-xl px-2 text-gray-100 bg-gray-600 hover:bg-gray-400 hover:transition-all" href="http://github.com/3urobeat/www" target="_blank">
-            <!-- GitHub logo -->
-            <span class="mr-1 size-[1em] logo-github" aria-hidden="true" />
+            <a class="flex w-fit items-center mt-0.5 -ml-1 rounded-xl px-2 text-gray-100 bg-gray-600 hover:bg-gray-400 hover:transition-all" href="http://github.com/3urobeat/www" target="_blank">
+                <!-- GitHub logo -->
+                <span class="mr-1 size-[1em] logo-github" aria-hidden="true" />
 
-            <span class="text-white rounded-lg text-xm" href="https://github.com/wardrobe-hq/wardrobe" target="_blank">Source Code</span>
-        </a>
+                <span class="text-white rounded-lg text-xm" href="https://github.com/wardrobe-hq/wardrobe" target="_blank">Source Code</span>
+            </a>
 
-        <!-- Becomes visible on group hover -->
-        <div class="h-0 opacity-0 group-hover:h-5 group-hover:opacity-100 duration-500 transition-all">
-            <p>Copyright (c) 2026 <a class="underline hover:text-gray-500" href="https://github.com/3urobeat" target="_blank">3urobeat</a></p>
+            <!-- Becomes visible on group hover -->
+            <div class="w-0 group-hover:w-60 h-0 group-hover:h-5 duration-500 transition-all overflow-clip">
+                <p>Copyright (c) 2026 <a class="underline hover:text-gray-500" href="https://github.com/3urobeat" target="_blank">3urobeat</a></p>
+            </div>
         </div>
     </div>
 
