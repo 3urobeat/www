@@ -5,7 +5,7 @@
  * Created Date: 2026-05-25 22:28:19
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-25 22:58:48
+ * Last Modified: 2026-05-31 12:06:22
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -19,29 +19,31 @@
 
 <template>
 
-    <div class="fixed flex items-center z-40 shrink-0 h-15 min-w-screen dark:text-text-dark">
+    <!-- TODO: Pill Shape -->
+    <div class="fixed right-4 top-4 p-1 custom-glass-pill rounded-2xl flex items-center justify-center select-none text-bg-light divide-border-secondary-light dark:divide-border-secondary-dark divide-x z-30">
+        <!-- TODO: Linktree hyperlink button -->
+        <a
+            class="flex px-1.5 py-0.5 hover:text-bg-input-hover-light hover:transition-all"
+            href=""
+        >
+            <PhLink class="size-5.5 transition-opacity" />
+        </a>
 
-        <!-- TODO: Pill Shape -->
-        <div class="fixed h-8 right-3 flex select-none shadow-md rounded-xl bg-bg-field-light dark:bg-bg-field-dark divide-border-secondary-light dark:divide-border-secondary-dark divide-x">
-            <!-- TODO: Linktree hyperlink button -->
-
-            <!-- Light/Dark Mode toggle -->
-            <button
-                class="w-9 px-1.75 py-1 rounded-xl hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark hover:transition-all"
-                @click="toggleDarkMode()"
-            >
-                <PhMoon class="hidden dark:block size-5.5 transition-opacity" />
-                <PhSun class="block dark:hidden size-5.5 transition-opacity" />
-            </button>
-        </div>
-
+        <!-- Light/Dark Mode toggle -->
+        <button
+            class="w-9 px-1.5 py-0.5 hover:text-bg-input-hover-light hover:transition-all"
+            @click="toggleDarkMode()"
+        >
+            <PhMoon class="hidden dark:block size-5.5 transition-opacity" />
+            <PhSun class="block dark:hidden size-5.5 transition-opacity" />
+        </button>
     </div>
 
 </template>
 
 
 <script setup lang="ts">
-    import { PhMoon, PhSun } from '@phosphor-icons/vue';
+    import { PhLink, PhMoon, PhSun } from '@phosphor-icons/vue';
     import { setUXSetting } from '../utils/storage';
 
 
