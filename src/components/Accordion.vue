@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-31 12:59:58
+ * Last Modified: 2026-06-01 18:02:31
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -33,20 +33,31 @@
         >
             <!-- Background & Fade -->
             <div
-                class="absolute bg-center bg-cover bg-yellow-img bg-no-repeat inset-0 scale-105 opacity-50 z-10"
+                class="absolute bg-center bg-cover bg-yellow-img bg-no-repeat inset-0 scale-105 z-10"
                 :class="thisCard.color"
-            ></div>
-            <div class="absolute bg-linear-to-b bottom-0 duration-500 ease-in-out from-transparent h-1/2 inset-x-0 to-black transform translate-y-1/2 z-20"></div>
+            >
+                <img v-if="thisCard.bgImgUrl" :src="thisCard.bgImgUrl" class="shrink-0 min-h-full object-cover" />
+            </div>
+            <div class="absolute bg-linear-to-b bottom-0 duration-500 ease-in-out from-transparent h-full inset-x-0 to-black transform translate-y-1/2 z-20"></div>
 
             <!-- Elements -->
             <div class="absolute bottom-0 duration-500 ease-in-out flex label left-0 mb-2 ml-3 sm:mb-3 sm:ml-2 z-30">
 
                 <!-- Icon -->
                 <div
-                    class="bg-black! flex h-10 icon items-center justify-center mr-3 rounded-full w-10"
+                    class="bg-black! flex h-10 text-2xl icon items-center justify-center mr-3 rounded-full w-10"
                     :class="thisCard.color"
                 >
-                    <PhAcorn />
+                    <!-- There's no switch case :') -->
+                    <PhCoatHanger v-if="thisCard.icon == AccordionIcon.COAT_HANGER" />
+                    <PhRobot      v-else-if="thisCard.icon == AccordionIcon.ROBOT"  />
+                    <PhBooks      v-else-if="thisCard.icon == AccordionIcon.BOOKS"  />
+                    <PhCpu        v-else-if="thisCard.icon == AccordionIcon.CPU"    />
+                    <PhLinuxLogo  v-else-if="thisCard.icon == AccordionIcon.LINUX_LOGO" />
+                    <PhBrowsers   v-else-if="thisCard.icon == AccordionIcon.BROWSERS"   />
+                    <PhMusicNotesSimple v-else-if="thisCard.icon == AccordionIcon.MUSIC_NOTES_SIMPLE" />
+                    <PhPianoKeys  v-else-if="thisCard.icon == AccordionIcon.PIANO_KEYS" />
+                    <PhDiscoBall  v-else-if="thisCard.icon == AccordionIcon.DISCO_BALL" />
                 </div>
 
                 <!-- Text Content -->
@@ -95,9 +106,9 @@
 
 
 <script setup lang="ts">
-    import { PhAcorn } from '@phosphor-icons/vue';
+    import { PhBooks, PhBrowsers, PhCoatHanger, PhCpu, PhDiscoBall, PhLinuxLogo, PhMusicNotesSimple, PhPianoKeys, PhRobot } from '@phosphor-icons/vue';
     import { ref, type PropType } from 'vue';
-    import type { AccordionCard } from '../types/accordion';
+    import { AccordionIcon, type AccordionCard } from '../types/accordion';
 
     // Ref
     let activePaneIndex = ref(0);

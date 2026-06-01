@@ -4,7 +4,7 @@
  * Created Date: 2026-05-30 21:49:12
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-30 21:49:40
+ * Last Modified: 2026-06-01 18:02:29
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -46,8 +46,24 @@ export const accordionColors = {
 } as const;
 
 
+// Supported icons as a erasableSyntaxOnly compatible DIY Enum - https://stackoverflow.com/a/79762129
+export const AccordionIcon = {
+    COAT_HANGER: 0,
+    ROBOT: 1,
+    BOOKS: 2,
+    CPU: 3,
+    LINUX_LOGO: 4,
+    BROWSERS: 5,
+    MUSIC_NOTES_SIMPLE: 6,
+    PIANO_KEYS: 7,
+    DISCO_BALL: 8
+} as const;
+
+
 export type AccordionCard = {
     title: string,
     description: string,
-    color: (typeof accordionColors)[keyof typeof accordionColors];
+    color: (typeof accordionColors)[keyof typeof accordionColors],
+    icon: (typeof AccordionIcon)[keyof typeof AccordionIcon],
+    bgImgUrl?: string
 }
