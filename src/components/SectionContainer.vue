@@ -5,7 +5,7 @@
  * Created Date: 2026-05-24 12:40:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-31 16:34:00
+ * Last Modified: 2026-06-02 22:34:51
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -29,6 +29,10 @@
             <p class="mt-3 text-lg mb-4">
                 <slot name="description" />
             </p>
+
+            <div class="mb-4">
+                <slot name="links" />
+            </div>
 
             <slot name="content" />
 
