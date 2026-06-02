@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-31 11:51:54
+ * Last Modified: 2026-06-02 22:34:28
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -103,6 +103,10 @@
 /* Primary button, used in various places on <button> container. Put Icon and Text inside. */
 .custom-button-primary {
     @apply flex items-center justify-center h-8 py-1 px-3 rounded-md shadow-md cursor-pointer bg-bg-input-light dark:bg-bg-input-dark outline-border-primary-light dark:outline-border-primary-dark outline-2 hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark hover:transition-all disabled:bg-bg-input-hover-light disabled:dark:bg-bg-input-hover-dark disabled:cursor-not-allowed;
+}
+
+.custom-external-anchor {
+    @apply flex items-center rounded-xl shadow-md hover:shadow-lg border border-white/10 bg-white/50 p-3 hover:bg-white hover:border-accent/30 transition-all duration-500
 }
 
 /* Small square button without text, used on <button> container. Put Icon inside. */
