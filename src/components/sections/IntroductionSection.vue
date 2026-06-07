@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-31 12:50:26
+ * Last Modified: 2026-06-07 13:17:22
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -54,6 +54,10 @@
                             {{ link.label }}
                         </a>
                     </nav>
+
+                    <p class="mt-10 text-text-muted">
+                        she/her — {{ getYearDiffWithMonthPrecision(new Date(2002, 1, 0), new Date()) }} y/o — Germany
+                    </p>
                 </div>
 
             </div>
@@ -65,6 +69,7 @@
 
 
 <script setup lang="ts">
+    import { getYearDiffWithMonthPrecision } from "../../utils/utils";
     import SectionContainer from "../SectionContainer.vue";
 
     const navLinks = [
