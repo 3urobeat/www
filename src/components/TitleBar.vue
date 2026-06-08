@@ -5,7 +5,7 @@
  * Created Date: 2026-05-25 22:28:19
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-31 12:06:22
+ * Last Modified: 2026-06-08 18:35:53
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -20,30 +20,47 @@
 <template>
 
     <!-- TODO: Pill Shape -->
-    <div class="fixed right-4 top-4 p-1 custom-glass-pill rounded-2xl flex items-center justify-center select-none text-bg-light divide-border-secondary-light dark:divide-border-secondary-dark divide-x z-30">
-        <!-- TODO: Linktree hyperlink button -->
+    <div class="fixed flex gap-4 right-4 top-4 z-30 text-bg-light">
+
+        <!-- Contact -->
         <a
-            class="flex px-1.5 py-0.5 hover:text-bg-input-hover-light hover:transition-all"
-            href=""
+            href="mailto:contact@goritz.org"
+            target="_blank"
+            class="flex items-center rounded-xl shadow-md hover:shadow-lg custom-glass-pill border-2! border-green-700! hover:border-green-500! hover:bg-green-500/30! gap-3 px-3 py-1.5 justify-center transition-all"
         >
-            <PhLink class="size-5.5 transition-opacity" />
+            <PhEnvelopeOpen class="size-5.5 shrink-0" />
+            <div>
+                <p class="">Get in touch!</p>
+            </div>
         </a>
 
-        <!-- Light/Dark Mode toggle -->
-        <button
-            class="w-9 px-1.5 py-0.5 hover:text-bg-input-hover-light hover:transition-all"
-            @click="toggleDarkMode()"
-        >
-            <PhMoon class="hidden dark:block size-5.5 transition-opacity" />
-            <PhSun class="block dark:hidden size-5.5 transition-opacity" />
-        </button>
+        <!-- Pill -->
+        <div class="custom-glass-pill p-1 rounded-2xl flex items-center justify-center select-none divide-border-secondary-light dark:divide-border-secondary-dark divide-x">
+            <!-- TODO: Linktree hyperlink button -->
+            <a
+                class="flex px-1.5 py-0.5 hover:text-bg-input-hover-light hover:transition-all"
+                href=""
+            >
+                <PhLink class="size-5.5 transition-opacity" />
+            </a>
+
+            <!-- Light/Dark Mode toggle -->
+            <button
+                class="w-9 px-1.5 py-0.5 hover:text-bg-input-hover-light hover:transition-all"
+                @click="toggleDarkMode()"
+            >
+                <PhMoon class="hidden dark:block size-5.5 transition-opacity" />
+                <PhSun class="block dark:hidden size-5.5 transition-opacity" />
+            </button>
+        </div>
+
     </div>
 
 </template>
 
 
 <script setup lang="ts">
-    import { PhLink, PhMoon, PhSun } from '@phosphor-icons/vue';
+    import { PhEnvelopeOpen, PhLink, PhMoon, PhSun } from '@phosphor-icons/vue';
     import { setUXSetting } from '../utils/storage';
 
 
