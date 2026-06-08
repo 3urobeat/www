@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-02 22:34:28
+ * Last Modified: 2026-06-08 18:06:28
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -19,21 +19,27 @@
 @import "tailwindcss-intersect";
 
 
-@layer base {
-    body {
-        @apply text-text-light dark:text-text-dark overflow-hidden;
-    }
+body {
+    @apply text-text-light dark:text-text-dark overflow-hidden;
+}
 
-    html {
-        scroll-behavior: smooth;
-        font-family: 'RenoMono', monospace;
-    }
+html {
+    scroll-behavior: smooth;
+    font-family: 'RenoMono', monospace;
+}
 
 
-    /* Hides no JS warning */
-    html.js #js-disabled-banner {
-        display: none;
-    }
+/* Hides no JS warning */
+html.js #js-disabled-banner {
+    display: none;
+}
+
+
+/* I'd like bullet points in my lists, thanks */
+ul {
+    list-style-type: disc;
+    padding: 10px 0 !important;
+    padding-left: 20px !important;
 }
 
 
@@ -56,10 +62,6 @@
     --color-bg-field-hover-dark: #242628;
     --color-bg-field-light: #f2f3f4;
     --color-bg-field-dark: #2a2d2f;
-
-    --color-bg-embed-hover-dark: #26292b;
-    --color-bg-embed-light: #d6dce4;
-    --color-bg-embed-dark: #242729;
 
     --color-text-light: #1a1a2e;
     --color-text-dark: #e8e6e3;
@@ -105,39 +107,9 @@
     @apply flex items-center justify-center h-8 py-1 px-3 rounded-md shadow-md cursor-pointer bg-bg-input-light dark:bg-bg-input-dark outline-border-primary-light dark:outline-border-primary-dark outline-2 hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark hover:transition-all disabled:bg-bg-input-hover-light disabled:dark:bg-bg-input-hover-dark disabled:cursor-not-allowed;
 }
 
-.custom-external-anchor {
-    @apply flex items-center rounded-xl shadow-md hover:shadow-lg border border-white/10 bg-white/50 p-3 hover:bg-white hover:border-accent/30 transition-all duration-500
-}
 
-/* Small square button without text, used on <button> container. Put Icon inside. */
-.custom-button-icon-only {
-    @apply p-1 rounded-md shadow-md bg-bg-input-light dark:bg-bg-input-dark outline-border-primary-light dark:outline-border-primary-dark outline-2 hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark hover:transition-all disabled:bg-bg-input-hover-light disabled:dark:bg-bg-input-hover-dark disabled:cursor-not-allowed;
-}
-
-.custom-button-icon-only-secondary {
-    @apply p-1 rounded-md shadow-md bg-bg-field-light dark:bg-bg-field-dark outline-border-secondary-light dark:outline-border-secondary-dark outline-2 hover:bg-bg-field-hover-light hover:dark:bg-bg-field-hover-dark hover:transition-all active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark disabled:bg-bg-field-hover-light disabled:dark:dark:bg-bg-field-hover-dark disabled:cursor-not-allowed;
-}
-
-/* Primary label to display text */
-.custom-label-primary {
-    @apply py-1 px-3 rounded-md shadow-md bg-bg-field-light dark:bg-bg-field-dark;
-}
-
-.custom-label-secondary {
-    @apply py-1 px-3 rounded-md shadow-md bg-bg-input-light dark:bg-bg-input-dark;
-}
-
-/* Small square label to display icon without text. Put Icon inside. */
-.custom-label-icon-only {
-    @apply p-1 rounded-md shadow-md bg-bg-field-light dark:bg-bg-field-dark;
-}
-
-/* These two define a custom grid for displaying items with desktop/mobile scaling. See dynamicTailwindHelper for the scaling mapping. */
-.custom-items-grid {
-    @apply grid gap-x-4 gap-y-6 md:gap-x-6 md:gap-y-10
-}
-.custom-items-grid-card {
-    @apply @container aspect-square md:aspect-auto rounded-2xl shadow-lg select-none bg-bg-input-light dark:bg-bg-input-dark hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark hover:transition-all
+.custom-external-anchor-multi {
+    @apply flex items-stretch rounded-xl shadow-md hover:shadow-lg border border-white/10 bg-bg-field-light dark:bg-bg-field-dark hover:bg-bg-field-hover-light hover:dark:bg-bg-field-hover-dark p-1 hover:border-accent/30 transition-all duration-500 divide-x divide-border-secondary-light dark:divide-border-secondary-dark
 }
 
 
@@ -212,5 +184,10 @@
 /* Global Logos */
 .logo-github {
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath class='st0' d='M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+}
+
+.logo-codeberg {
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath class='st0' d='M11.955.49A12 12 0 0 0 0 12.49a12 12 0 0 0 1.832 6.373L11.838 5.928a.187.14 0 0 1 .324 0l10.006 12.935A12 12 0 0 0 24 12.49a12 12 0 0 0-12-12zm.375 6.467 4.416 16.553a12 12 0 0 0 5.137-4.213z'/%3E%3C/svg%3E");
     background-color: currentColor;
 }
