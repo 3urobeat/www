@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-09 20:21:11
+ * Last Modified: 2026-06-09 20:36:51
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -83,7 +83,6 @@ ul {
 
     --color-accent: #6366f1;
     --color-accent-hover: #4f46e5;
-
 }
 
 
@@ -162,7 +161,7 @@ ul {
 @keyframes blink-caret { 50% { border-color: transparent; } }
 
 .typing-animation {
-    border-right: .2ch solid black;
+    @apply border-r-[.2ch] border-text-light dark:border-text-dark;
     white-space: nowrap;
     display: inline-flex;
     overflow: hidden;
