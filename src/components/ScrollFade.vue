@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 17:30:45
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-27 22:35:04
+ * Last Modified: 2026-06-09 20:21:15
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -20,7 +20,7 @@
 <template>
     <!-- Use no-intersect to trigger on page load, see: https://github.com/heidkaemper/tailwindcss-intersect/issues/9 -->
     <div
-        class="transition-all duration-1000 ease-out opacity-0 translate-y-8 intersect:opacity-100 intersect:translate-y-0 intersect-once"
+        class="transition-all duration-1500 ease-out opacity-0 translate-y-8 intersect:opacity-100 intersect:translate-y-0 intersect-once"
         no-intersect
     >
         <slot />

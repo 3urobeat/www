@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-08 18:06:28
+ * Last Modified: 2026-06-09 20:21:11
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -28,12 +28,14 @@ html {
     font-family: 'RenoMono', monospace;
 }
 
+.content-clip {
+    clip-path: url(#contentClip);
+}
 
 /* Hides no JS warning */
 html.js #js-disabled-banner {
     display: none;
 }
-
 
 /* I'd like bullet points in my lists, thanks */
 ul {
@@ -176,8 +178,34 @@ ul {
 }
 
 
-.content-clip {
-    clip-path: url(#contentClip);
+/* List elements fade in animation. This must be a Tailwind utility to make intersect: work */
+@utility custom-list-fadein {
+  > li {
+    opacity: 0;
+    animation: list-fade 700ms cubic-bezier(.2,.9,.2,1) forwards;
+  }
+
+  > li:nth-child(1)  { animation-delay: 0s;    }
+  > li:nth-child(2)  { animation-delay: 0.13s; }
+  > li:nth-child(3)  { animation-delay: 0.26s; }
+  > li:nth-child(4)  { animation-delay: 0.39s; }
+  > li:nth-child(5)  { animation-delay: 0.52s; }
+  > li:nth-child(6)  { animation-delay: 0.65s; }
+  > li:nth-child(7)  { animation-delay: 0.78s; }
+  > li:nth-child(8)  { animation-delay: 0.91s; }
+  > li:nth-child(9)  { animation-delay: 1.04s; }
+  > li:nth-child(10) { animation-delay: 1.17s; }
+
+  > li > ul > li:nth-child(1)  { animation-delay: 1.30s; } /* Support nested ul's */
+  > li > ul > li:nth-child(2)  { animation-delay: 1.43s; }
+  > li > ul > li:nth-child(3)  { animation-delay: 1.56s; }
+  > li > ul > li:nth-child(4)  { animation-delay: 1.69s; }
+  > li > ul > li:nth-child(5)  { animation-delay: 1.82s; }
+}
+
+@keyframes list-fade {
+  from { opacity: 0; transform: translateY(8px) scale(.995); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
 }
 
 
