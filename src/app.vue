@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-05-31 16:33:17
+ * Last Modified: 2026-06-09 20:43:07
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -26,7 +26,7 @@
 
     <main>
         <!-- Left Side - Page Content -->
-        <div class="fixed inset-0 content-clip bg-bg-light dark:bg-bg-dark transition-colors" id="left-content">
+        <div class="fixed inset-0 z-10 content-clip bg-bg-light dark:bg-bg-dark transition-colors" id="left-content">
             <div ref="scrollContainer" class="h-full overflow-y-auto scroll-smooth">
                 <IntroductionSection />
 
@@ -74,6 +74,11 @@
                 </clipPath>
             </defs>
         </svg>
+
+        <!-- Right Side Content -->
+        <div class="fixed inset-0 z-0" id="right-media">
+            <MediaPane :current-section="currentSection" />
+        </div>
     </main>
 
 
@@ -86,11 +91,41 @@
 
 
 <script setup lang="ts">
+    import { onMounted, ref } from "vue";
     import SoftwareSection from "./components/sections/SoftwareSection.vue";
     import SysAdminSection from "./components/sections/SysAdminSection.vue";
     import MusicSection from "./components/sections/MusicSection.vue";
+    import MediaPane from "./components/MediaPane.vue";
     import IntroductionSection from "./components/sections/IntroductionSection.vue";
     import TitleBar from "./components/TitleBar.vue";
     import Footer from "./components/Footer.vue";
+
+
+    // Observe which section is currently visible and update media pane
+    // Would be cool to reuse the Tailwind intersect plugin as it already has a JS-based intersection observer
+    const currentSection  = ref("intro");
+    const scrollContainer = ref<HTMLElement | null>(null);
+    const sectionIds      = ["intro", "software", "sysadmin", "music"];
+
+    onMounted(() => {
+        const el = scrollContainer.value;
+        if (!el) return;
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    if (entry.isIntersecting) {
+                        // console.log("Section Entry: " + entry.target.id)
+                        currentSection.value = entry.target.id;
+                    }
+                }
+            }
+        );
+
+        for (const id of sectionIds) {
+            const target = el.querySelector(`#${id}`);
+            if (target) observer.observe(target);
+        }
+    });
 
 </script>
