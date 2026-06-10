@@ -5,7 +5,7 @@
  * Created Date: 2026-05-25 22:28:19
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-08 18:35:53
+ * Last Modified: 2026-06-10 20:44:23
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -26,7 +26,7 @@
         <a
             href="mailto:contact@goritz.org"
             target="_blank"
-            class="flex items-center rounded-xl shadow-md hover:shadow-lg custom-glass-pill border-2! border-green-700! hover:border-green-500! hover:bg-green-500/30! gap-3 px-3 py-1.5 justify-center transition-all"
+            class="flex items-center rounded-xl shadow-md hover:shadow-lg custom-glass-pill border-2! border-green-700! hover:border-green-500! hover:bg-green-500/30! gap-3 px-3 py-1.5 justify-center transition-all duration-300"
         >
             <PhEnvelopeOpen class="size-5.5 shrink-0" />
             <div>
