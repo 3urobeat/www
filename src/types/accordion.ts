@@ -4,7 +4,7 @@
  * Created Date: 2026-05-30 21:49:12
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-01 18:02:29
+ * Last Modified: 2026-06-11 17:21:56
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -65,5 +65,6 @@ export type AccordionCard = {
     description: string,
     color: (typeof accordionColors)[keyof typeof accordionColors],
     icon: (typeof AccordionIcon)[keyof typeof AccordionIcon],
-    bgImgUrl?: string
+    bgImgUrl?: string,
+    clickUrl?: string
 }
