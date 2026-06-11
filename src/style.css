@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-09 20:36:51
+ * Last Modified: 2026-06-11 17:21:06
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -20,7 +20,7 @@
 
 
 body {
-    @apply text-text-light dark:text-text-dark overflow-hidden;
+    @apply bg-bg-light dark:bg-bg-dark transition-colors text-text-light dark:text-text-dark overflow-hidden;
 }
 
 html {
@@ -28,8 +28,15 @@ html {
     font-family: 'RenoMono', monospace;
 }
 
-.content-clip {
-    clip-path: url(#contentClip);
+/* Can be used to clip content to either the left (content) or right (media) side of the page */
+.left-clip {
+    clip-path: url(#leftClip);
+}
+
+.right-clip {
+    clip-path: url(#rightClip);
+}
+
 }
 
 /* Hides no JS warning */

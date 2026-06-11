@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-09 20:43:07
+ * Last Modified: 2026-06-11 17:20:52
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -26,7 +26,7 @@
 
     <main>
         <!-- Left Side - Page Content -->
-        <div class="fixed inset-0 z-10 content-clip bg-bg-light dark:bg-bg-dark transition-colors" id="left-content">
+        <div class="fixed inset-0 z-10" id="left-content">
             <div ref="scrollContainer" class="h-full overflow-y-auto scroll-smooth">
                 <IntroductionSection />
 
@@ -69,14 +69,18 @@
         <!-- Squiggly Divider Border. Path follows path above, roughly divided by 100 -->
         <svg aria-hidden="true" class="absolute w-0 h-0 pointer-events-none" id="right-bg">
             <defs>
-                <clipPath id="contentClip" clipPathUnits="objectBoundingBox">
+                <clipPath id="leftClip" clipPathUnits="objectBoundingBox">
                     <path d="M 0,0 L 0.36,-0.1 C 0.44,0.10 0.50,0.20 0.667,0.333 C 0.75,0.45 0.82,0.60 0.80,0.72 C 0.78,0.82 0.90,0.88 0.95,1.01 L 0,1 Z" />
+                </clipPath>
+                <!-- Clips for the left side and right side -->
+                <clipPath id="rightClip" clipPathUnits="objectBoundingBox">
+                    <path d="M 0.36,-0.1 L 1,-0.1 L 1,1.01 L 0.95,1.01 C 0.90,0.88 0.78,0.82 0.80,0.72 C 0.82,0.60 0.75,0.45 0.667,0.333 C 0.50,0.20 0.44,0.10 0.36,-0.1 Z" />
                 </clipPath>
             </defs>
         </svg>
 
         <!-- Right Side Content -->
-        <div class="fixed inset-0 z-0" id="right-media">
+        <div class="fixed inset-0 z-0 right-clip" id="right-media">
             <MediaPane :current-section="currentSection" />
         </div>
     </main>
