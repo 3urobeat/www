@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-01 18:02:31
+ * Last Modified: 2026-06-11 17:21:53
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -27,21 +27,21 @@
         <div
             v-for="(thisCard, index) in cards"
             :key="thisCard.title"
-            class="cursor-pointer duration-500 ease-in-out grow m-2 min-h-14 sm:min-w-14 shadow-md overflow-hidden pane relative rounded-3xl transition-all"
+            class="cursor-pointer duration-500 ease-out grow group m-2 min-h-14 sm:min-w-14 shadow-md overflow-hidden pane relative rounded-3xl transition-all"
             :class="index == activePaneIndex ? 'active' : ''"
-            @click="activePaneIndex = index"
+            @click="handleCardClick(index)"
         >
-            <!-- Background & Fade -->
+            <!-- Background -->
             <div
-                class="absolute bg-center bg-cover bg-yellow-img bg-no-repeat inset-0 scale-105 z-10"
+                class="absolute background bg-center bg-cover bg-yellow-img bg-no-repeat inset-0 scale-105 z-10 duration-300 group-hover:brightness-85"
                 :class="thisCard.color"
             >
                 <img v-if="thisCard.bgImgUrl" :src="thisCard.bgImgUrl" class="shrink-0 min-h-full object-cover" />
             </div>
-            <div class="absolute bg-linear-to-b bottom-0 duration-500 ease-in-out from-transparent h-full inset-x-0 to-black transform translate-y-1/2 z-20"></div>
+            <div class="absolute h-full bg-linear-to-b bottom-0 ease-in-out from-transparent to-black inset-x-0 transform translate-y-1/2 z-20"></div>
 
-            <!-- Elements -->
-            <div class="absolute bottom-0 duration-500 ease-in-out flex label left-0 mb-2 ml-3 sm:mb-3 sm:ml-2 z-30">
+            <!-- Content -->
+            <div class="absolute bottom-0 flex label left-0 mb-2 ml-3 sm:mb-3 sm:ml-2 z-30 duration-500">
 
                 <!-- Icon -->
                 <div
@@ -120,5 +120,18 @@
             required: true
         }
     });
+
+    // Handles click on card by setting active card index and navigate to clickUrl if already active
+    function handleCardClick(index: number) {
+        const card = props.cards[index];
+
+        if (activePaneIndex.value === index) {
+            if (card.clickUrl) {
+                window.open(card.clickUrl, '_blank', 'noopener');
+            }
+        } else {
+            activePaneIndex.value = index;
+        }
+    }
 
 </script>
