@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-11 17:21:06
+ * Last Modified: 2026-06-11 17:22:46
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -37,6 +37,10 @@ html {
     clip-path: url(#rightClip);
 }
 
+/* Inverts colors of everything behind the element — used for content that overflows the squiggly divider */
+.backdrop-invert {
+    backdrop-filter: invert(1);
+    -webkit-backdrop-filter: invert(1);
 }
 
 /* Hides no JS warning */

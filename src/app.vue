@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-11 17:20:52
+ * Last Modified: 2026-06-11 17:22:37
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -38,6 +38,9 @@
             </div>
         </div>
 
+
+        <!-- Color-invert overlay for content that overflows into the right media area -->
+        <div class="fixed inset-0 z-15 pointer-events-none right-clip backdrop-invert dark:backdrop-invert-100" id="overflowInvertMask" aria-hidden="true"></div>
 
         <!-- Squiggly Divider Line -->
         <svg
@@ -79,8 +82,8 @@
             </defs>
         </svg>
 
-        <!-- Right Side Content -->
-        <div class="fixed inset-0 z-0 right-clip" id="right-media">
+        <!-- Right Side Content. We need to invert it to counteract overflowInvertMask so that only affects the content overflow -->
+        <div class="fixed inset-0 z-0 invert right-clip" id="right-media">
             <MediaPane :current-section="currentSection" />
         </div>
     </main>
