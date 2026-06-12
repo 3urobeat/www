@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-12 18:06:52
+ * Last Modified: 2026-06-12 21:54:41
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -46,7 +46,8 @@
                 class="absolute top-3 right-3 px-2 py-1 bg-black/50 text-text-dark text-sm shadow-md rounded-2xl select-none z-30 transition-opacity duration-500"
                 :class="index == activePaneIndex ? 'opacity-100' : 'opacity-0'"
             >
-                <span class="text-nowrap">{{ thisCard.statsBubbleText }}</span>
+                <!-- Transparent background to counteract span-bg-invert -->
+                <span class="text-nowrap bg-white/0!">{{ thisCard.statsBubbleText }}</span>
             </div>
 
             <!-- Text Content -->

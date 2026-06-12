@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-12 18:07:49
+ * Last Modified: 2026-06-12 21:50:19
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -33,7 +33,7 @@
                     />
                 </div>
 
-                <div class="lg:w-1/2 shrink-0">
+                <div class="lg:w-2/5 shrink-0">
                     <!-- Introduction -->
                     <h1 class="flex w-fit flex-col gap-2 text-4xl sm:text-5xl xl:text-6xl font-semibold text-shadow-md">
                         <span>Hi, I am </span>

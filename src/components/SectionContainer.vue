@@ -5,7 +5,7 @@
  * Created Date: 2026-05-24 12:40:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-12 18:07:51
+ * Last Modified: 2026-06-12 21:59:12
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -19,7 +19,7 @@
 
 <template>
 
-    <section :id="anchorId" class="min-h-screen px-6 md:px-10 lg:px-12 xl:px-24 py-24"> <!-- pl-6 md:pl-10 lg:pl-12 xl:pl-24 w-2/3 md:w-1/2 -->
+    <section :id="anchorId" class="min-h-screen px-6 md:px-10 lg:px-12 xl:px-24 2xl:px-48 py-24"> <!-- pl-6 md:pl-10 lg:pl-12 xl:pl-24 w-2/3 md:w-1/2 -->
         <ScrollFade>
 
             <h2 class="text-4xl lg:text-5xl font-semibold mb-4">
