@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-11 17:22:37
+ * Last Modified: 2026-06-12 18:07:42
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -90,7 +90,7 @@
 
 
     <!-- Footer -->
-    <footer class="fixed z-20 text-nowrap bottom-0 pb-2 px-2.5 dark:text-text-dark select-none">
+    <footer class="fixed z-20 text-nowrap bottom-0 pb-2 px-2.5 select-none">
         <Footer />
     </footer>
 

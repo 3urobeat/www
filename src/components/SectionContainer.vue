@@ -5,7 +5,7 @@
  * Created Date: 2026-05-24 12:40:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-11 17:20:55
+ * Last Modified: 2026-06-12 18:07:51
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -23,7 +23,7 @@
         <ScrollFade>
 
             <h2 class="text-4xl lg:text-5xl font-semibold mb-4">
-                <slot name="title" />
+                <span><slot name="title" /></span>
             </h2>
 
             <p class="mt-3 text-lg mb-4">
