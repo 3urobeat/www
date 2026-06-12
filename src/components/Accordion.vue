@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-11 17:21:53
+ * Last Modified: 2026-06-12 18:06:52
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -40,12 +40,21 @@
             </div>
             <div class="absolute h-full bg-linear-to-b bottom-0 ease-in-out from-transparent to-black inset-x-0 transform translate-y-1/2 z-20"></div>
 
-            <!-- Content -->
+            <!-- Optional Stats Pill -->
+            <div
+                v-if="thisCard.statsBubbleText"
+                class="absolute top-3 right-3 px-2 py-1 bg-black/50 text-text-dark text-sm shadow-md rounded-2xl select-none z-30 transition-opacity duration-500"
+                :class="index == activePaneIndex ? 'opacity-100' : 'opacity-0'"
+            >
+                <span class="text-nowrap">{{ thisCard.statsBubbleText }}</span>
+            </div>
+
+            <!-- Text Content -->
             <div class="absolute bottom-0 flex label left-0 mb-2 ml-3 sm:mb-3 sm:ml-2 z-30 duration-500">
 
                 <!-- Icon -->
                 <div
-                    class="bg-black! flex h-10 text-2xl icon items-center justify-center mr-3 rounded-full w-10"
+                    class="bg-black! flex h-10 text-2xl icon items-center justify-center mr-3 shadow-md rounded-full w-10"
                     :class="thisCard.color"
                 >
                     <!-- There's no switch case :') -->
@@ -61,7 +70,7 @@
                 </div>
 
                 <!-- Text Content -->
-                <div class="content flex flex-col justify-center leading-tight text-sm text-white whitespace-pre">
+                <div class="content flex flex-col justify-center leading-tight text-sm text-white text-shadow-md whitespace-pre">
                     <div class="font-bold">{{ thisCard.title }}</div>
                     <div class="delay-100">{{ thisCard.description }}</div>
                 </div>
