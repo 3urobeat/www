@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-11 17:22:46
+ * Last Modified: 2026-06-12 18:07:46
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -19,13 +19,18 @@
 @import "tailwindcss-intersect";
 
 
+html {
+    font-family: 'RenoMono', monospace;
+}
+
+/* Set global background and text color rules */
 body {
     @apply bg-bg-light dark:bg-bg-dark transition-colors text-text-light dark:text-text-dark overflow-hidden;
 }
 
-html {
-    scroll-behavior: smooth;
-    font-family: 'RenoMono', monospace;
+/* Apply background to text in dark mode to fix text becoming invisible when overflowing into media pane and being color-inverted */
+span { /* Search Tag: span-bg-invert */
+    @apply dark:bg-bg-dark dark:rounded-md;
 }
 
 /* Can be used to clip content to either the left (content) or right (media) side of the page */
@@ -37,7 +42,7 @@ html {
     clip-path: url(#rightClip);
 }
 
-/* Inverts colors of everything behind the element — used for content that overflows the squiggly divider */
+/* Inverts colors of everything behind it */
 .backdrop-invert {
     backdrop-filter: invert(1);
     -webkit-backdrop-filter: invert(1);
@@ -123,6 +128,9 @@ ul {
 .custom-external-anchor-multi {
     @apply flex items-stretch rounded-xl shadow-md hover:shadow-lg border border-white/10 bg-bg-field-light dark:bg-bg-field-dark hover:bg-bg-field-hover-light hover:dark:bg-bg-field-hover-dark p-1 hover:border-accent/30 transition-all duration-500 divide-x divide-border-secondary-light dark:divide-border-secondary-dark
 }
+.custom-external-anchor-multi > span { /* Counteract span-bg-invert */
+    @apply bg-white/0 rounded-none
+}
 
 
 /* Liquid glass effect */
@@ -172,7 +180,7 @@ ul {
 @keyframes blink-caret { 50% { border-color: transparent; } }
 
 .typing-animation {
-    @apply border-r-[.2ch] border-text-light dark:border-text-dark;
+    @apply border-r-[.2ch] border-text-light dark:border-text-dark rounded-none;
     white-space: nowrap;
     display: inline-flex;
     overflow: hidden;

@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-11 17:21:02
+ * Last Modified: 2026-06-12 18:07:49
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -35,7 +35,7 @@
 
                 <div class="lg:w-1/2 shrink-0">
                     <!-- Introduction -->
-                    <h1 class="flex flex-col gap-2 text-4xl sm:text-5xl xl:text-6xl font-semibold text-shadow-md">
+                    <h1 class="flex w-fit flex-col gap-2 text-4xl sm:text-5xl xl:text-6xl font-semibold text-shadow-md">
                         <span>Hi, I am </span>
                         <span>
                             <span class="text-text-variable typing-animation">Tomke</span>, a
@@ -51,12 +51,12 @@
                             class="group flex items-center gap-2 text-base sm:text-lg hover:text-accent transition-colors"
                         >
                             <span class="w-6 h-px bg-text-muted group-hover:w-12 group-hover:bg-accent transition-all duration-300"></span>
-                            {{ link.label }}
+                            <span>{{ link.label }}</span>
                         </a>
                     </nav>
 
                     <p class="mt-10 text-text-muted">
-                        she/her — {{ getYearDiffWithMonthPrecision(new Date(2002, 1, 0), new Date()) }} y/o — Germany
+                        <span>she/her — {{ getYearDiffWithMonthPrecision(new Date(2002, 1, 0), new Date()) }} y/o — Germany</span>
                     </p>
                 </div>
 
