@@ -4,7 +4,7 @@
  * Created Date: 2026-06-07 12:40:48
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-07 13:20:01
+ * Last Modified: 2026-06-13 15:48:05
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -26,4 +26,32 @@ export function getYearDiffWithMonthPrecision(from: Date, to: Date): number {
     to.setUTCDate(0);
 
     return new Date(to.getTime() - from.getTime()).getUTCFullYear() - 1970;
+}
+
+
+/**
+ * Formats time to x hours ago if <24 hours, otherwise formats to ISO8601
+ * @param timestamp The timestamp to convert
+ * @param alwaysShowTimestamp Optional: Controls whether to always/never show the ISO8601 timestamp, even if <24h ago
+ * @returns Formatted time, either in "x hours" or ISO8601 format
+ */
+export function formatTimestamp(timestamp: number, alwaysShowTimestamp?: "always" | "never") {
+    let until = Math.abs((Date.now() - timestamp) / 1000);
+    let untilUnit = "seconds";
+
+    if (until < 86400 && (!alwaysShowTimestamp || alwaysShowTimestamp == "never")) { // 24h in sec
+        if (until > 60) {
+            until = until / 60; untilUnit = "minutes";
+
+            if (until > 60) {
+                until = until / 60; untilUnit = "hours";
+            }
+        }
+
+        return `${Math.round(until)} ${untilUnit}`;
+    } else {
+        const timezoneOffset = new Date().getTimezoneOffset() * 60 * 1000;
+
+        return ((new Date(timestamp - timezoneOffset)).toISOString().replace(/T/, " ").replace(/\..+/, ""));
+    }
 }
