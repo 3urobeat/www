@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-12 21:54:41
+ * Last Modified: 2026-06-13 16:49:58
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -17,23 +17,23 @@
 -->
 
 
-<!-- Heavily modified image Accordion from https://freefrontend.com/tailwind-accordions/ - https://codepen.io/numerical/pen/MWpZwxB -->
+<!-- *Very* heavily modified image Accordion from https://freefrontend.com/tailwind-accordions/ - https://codepen.io/numerical/pen/MWpZwxB -->
 
 
 <template>
 
-    <div class="flex flex-col grow sm:flex-row sm:h-72 items-stretch max-w-2xl sm:min-w-md sm:overflow-hidden w-full">
+    <div class="flex flex-col grow sm:flex-row sm:h-72 items-stretch sm:min-w-md sm:overflow-hidden">
 
         <div
             v-for="(thisCard, index) in cards"
             :key="thisCard.title"
             class="cursor-pointer duration-500 ease-out grow group m-2 min-h-14 sm:min-w-14 shadow-md overflow-hidden pane relative rounded-3xl transition-all"
-            :class="index == activePaneIndex ? 'active' : ''"
+            :class="index == activePaneIndex ? 'max-w-125' : 'max-w-0'"
             @click="handleCardClick(index)"
         >
             <!-- Background -->
             <div
-                class="absolute background bg-center bg-cover bg-yellow-img bg-no-repeat inset-0 scale-105 z-10 duration-300 group-hover:brightness-85"
+                class="absolute flex background bg-center bg-no-repeat justify-center items-center inset-0 z-10 group-hover:brightness-85"
                 :class="thisCard.color"
             >
                 <img v-if="thisCard.bgImgUrl" :src="thisCard.bgImgUrl" class="shrink-0 min-h-full object-cover" />
@@ -55,7 +55,7 @@
 
                 <!-- Icon -->
                 <div
-                    class="bg-black! flex h-10 text-2xl icon items-center justify-center mr-3 shadow-md rounded-full w-10"
+                    class="bg-black! absolute flex w-10 h-10 text-2xl items-center justify-center shadow-md rounded-full shrink-0 bottom-0"
                     :class="thisCard.color"
                 >
                     <!-- There's no switch case :') -->
@@ -71,48 +71,22 @@
                 </div>
 
                 <!-- Text Content -->
-                <div class="content flex flex-col justify-center leading-tight text-sm text-white text-shadow-md whitespace-pre">
-                    <div class="font-bold">{{ thisCard.title }}</div>
-                    <div class="delay-100">{{ thisCard.description }}</div>
+                <div
+                    class="content flex flex-col ml-13 justify-center text-sm text-white text-shadow-md transition-opacity duration-200"
+                    :class="index == activePaneIndex ? 'opacity-100' : 'opacity-0'"
+                >
+                    <span class="font-bold bg-white/0!">{{ thisCard.title }}</span>
+                    <span class="delay-100 bg-white/0!">{{ thisCard.description }}</span>
+                    <!-- Transparent background to counteract span-bg-invert -->
                 </div>
 
             </div>
         </div>
 
     </div>
+    <span class="opacity-50 text-xs ml-2">Click on a card to learn more!</span>
 
 </template>
-
-
-<style lang="css">
-
-    .pane.active {
-        flex-grow: 10;
-        max-width: 100%;
-        min-height: 7rem;
-
-        .background {
-            scale: 1.25 1.25;
-        }
-
-        .label {
-            @media (min-width: 640px) {
-                translate: 0.5rem 0;
-            }
-
-            .content > * {
-                opacity: 1;
-                translate: 0;
-            }
-        }
-
-        .shadow {
-            opacity: 0.75;
-            translate: 0;
-        }
-    }
-
-</style>
 
 
 <script setup lang="ts">
