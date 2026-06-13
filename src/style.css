@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-12 18:07:46
+ * Last Modified: 2026-06-12 22:49:24
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -142,25 +142,6 @@ ul {
 .dark .custom-glass-pill {
     background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.01) 100%);
 }
-
-
-/* Loading Animation from https://css-loaders.com/spinner/ */
-.loader {
-    width: 50px;
-    padding: 8px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: var(--color-wardrobe-blue);
-    --_m:
-        conic-gradient(#0000 10%,#000),
-        linear-gradient(#000 0 0) content-box;
-    -webkit-mask: var(--_m);
-            mask: var(--_m);
-    -webkit-mask-composite: source-out;
-            mask-composite: subtract;
-    animation: l3 1s infinite linear;
-}
-@keyframes l3 {to{transform: rotate(1turn)}}
 
 
 /* Typing animation – repeats with fade-back every 10s */

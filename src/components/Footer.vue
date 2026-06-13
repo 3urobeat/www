@@ -5,7 +5,7 @@
  * Created Date: 2026-05-31 11:11:37
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-12 21:37:51
+ * Last Modified: 2026-06-12 22:48:45
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -34,7 +34,7 @@
                 <span class="mr-1 size-[1em] logo-github" aria-hidden="true" />
 
                 <!-- Transparent background to counteract span-bg-invert -->
-                <span class="text-white bg-white/0! rounded-lg text-xm" href="https://github.com/wardrobe-hq/wardrobe" target="_blank">Source Code</span>
+                <span class="text-white bg-white/0! rounded-lg text-xm" href="https://github.com/3urobeat/www" target="_blank">Source Code</span>
             </a>
 
             <!-- Becomes visible on group hover -->
