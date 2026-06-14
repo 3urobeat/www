@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 17:31:02
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 17:48:50
+ * Last Modified: 2026-06-14 19:25:51
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -109,7 +109,6 @@
 
         <template v-slot:content>
 
-            <!-- TODO: Absolutely needs noscript support -->
             <div class="flex flex-col gap-4">
                 <div class="">
 

@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "vue-tsc -b && vite build && node scripts/prerender.mjs",
     "build:noprerender": "vue-tsc -b && vite build",
-    "preview": "vite preview",
+    "start": "vite preview",
+    "bs": "npm run build && npm run start",
     "clean": "rm -r dist/*"
   },
   "repository": {

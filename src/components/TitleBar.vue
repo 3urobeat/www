@@ -5,7 +5,7 @@
  * Created Date: 2026-05-25 22:28:19
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 19:19:39
+ * Last Modified: 2026-06-14 19:25:50
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -19,7 +19,6 @@
 
 <template>
 
-    <!-- TODO: Pill Shape -->
     <div class="fixed flex flex-col-reverse md:flex-row gap-4 right-0 px-4 top-4 z-30 text-bg-light">
 
         <noscript>
