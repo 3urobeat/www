@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:28:52
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:57
+ * Last Modified: 2026-06-14 15:37:57
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -18,6 +18,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import tailwindcss from "@tailwindcss/vite";
+import { resolve } from "path";
 
 
 // https://vite.dev/config/
@@ -26,4 +27,12 @@ export default defineConfig({
         tailwindcss(),
         vue(),
     ],
+    build: {
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, "index.html"),
+                linktree: resolve(__dirname, "linktree.html"),
+            },
+        },
+    },
 });
