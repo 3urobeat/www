@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 17:51:18
+ * Last Modified: 2026-06-14 19:21:56
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -39,7 +39,7 @@
         >
             <!-- Background -->
             <div
-                class="absolute flex background bg-center bg-no-repeat justify-center items-center inset-0 z-10 group-hover:brightness-85 duration-300"
+                class="absolute flex background bg-center bg-no-repeat justify-center items-center inset-0 z-10 brightness-80 group-hover:brightness-60 duration-300"
                 :class="thisCard.color"
             >
                 <img v-if="thisCard.bgImgUrl" :src="thisCard.bgImgUrl" alt="" class="shrink-0 min-h-full object-cover" />
