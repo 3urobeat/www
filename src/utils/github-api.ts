@@ -4,7 +4,7 @@
  * Created Date: 2026-06-09 20:23:42
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-13 15:50:34
+ * Last Modified: 2026-06-14 12:24:40
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -39,7 +39,7 @@ export async function fetchLastGitHubCommit(username: string): Promise<LastCommi
         }
 
         const events    = await res.json();
-        const pushEvent = events.find((e) => e.type === "PushEvent");
+        const pushEvent = events.find((e: any) => e.type === "PushEvent");
         if (!pushEvent) return null;
 
         const repoName:  string = pushEvent.repo.name;

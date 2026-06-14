@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 11:33:06
+ * Last Modified: 2026-06-14 17:04:02
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -72,7 +72,7 @@
 
                 <!-- Text Content -->
                 <div
-                    class="content flex flex-col ml-13 justify-center text-sm text-white text-shadow-md transition-opacity duration-200"
+                    class="content flex flex-col ml-13 justify-center text-sm text-white text-shadow-lg transition-opacity duration-200"
                     :class="index == activePaneIndex ? 'opacity-100' : 'opacity-0'"
                 >
                     <span class="font-bold bg-white/0!">{{ thisCard.title }}</span>
