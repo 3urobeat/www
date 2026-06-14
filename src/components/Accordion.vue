@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 17:04:02
+ * Last Modified: 2026-06-14 17:51:18
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -22,28 +22,34 @@
 
 <template>
 
-    <div class="flex flex-col grow sm:flex-row items-stretch sm:min-w-md sm:overflow-hidden">
+    <div role="tablist" class="flex flex-col grow sm:flex-row items-stretch sm:min-w-md sm:overflow-hidden">
 
-        <div
+        <button
             v-for="(thisCard, index) in cards"
             :key="thisCard.title"
-            class="cursor-pointer duration-500 ease-out grow group m-2 min-h-14 h-60 sm:min-w-14 shadow-md overflow-hidden pane relative rounded-3xl transition-all"
+            type="button"
+            role="tab"
+            :aria-selected="index === activePaneIndex"
+            :aria-label="thisCard.title + (index === activePaneIndex ? ' (selected)' : '')"
+            class="duration-500 ease-out grow group m-2 min-h-14 h-60 sm:min-w-14 shadow-md overflow-hidden pane relative rounded-3xl transition-all text-left"
             :class="index == activePaneIndex ? 'sm:max-w-125 max-sm:max-h-96' : 'sm:max-w-0 max-sm:max-h-0'"
             @click="handleCardClick(index)"
+            @keydown.enter.prevent="handleCardClick(index)"
+            @keydown.space.prevent="handleCardClick(index)"
         >
             <!-- Background -->
             <div
                 class="absolute flex background bg-center bg-no-repeat justify-center items-center inset-0 z-10 group-hover:brightness-85 duration-300"
                 :class="thisCard.color"
             >
-                <img v-if="thisCard.bgImgUrl" :src="thisCard.bgImgUrl" class="shrink-0 min-h-full object-cover" />
+                <img v-if="thisCard.bgImgUrl" :src="thisCard.bgImgUrl" alt="" class="shrink-0 min-h-full object-cover" />
             </div>
             <div class="absolute h-full bg-linear-to-b bottom-0 ease-in-out from-transparent to-black inset-x-0 transform translate-y-1/2 z-20"></div>
 
             <!-- Optional Stats Pill -->
             <div
                 v-if="thisCard.statsBubbleText"
-                class="absolute top-3 right-3 px-2 py-1 bg-black/50 text-text-dark text-sm shadow-md rounded-2xl select-none z-30 transition-opacity duration-500"
+                class="absolute top-3 right-3 px-2 py-1 bg-black/50 text-text-dark text-sm shadow-md rounded-2xl z-30 transition-opacity duration-500"
                 :class="index == activePaneIndex ? 'opacity-100' : 'opacity-0'"
             >
                 <!-- Transparent background to counteract span-bg-invert -->
@@ -57,6 +63,7 @@
                 <div
                     class="bg-black! absolute flex w-10 h-10 text-2xl items-center justify-center shadow-md rounded-full shrink-0 bottom-0"
                     :class="thisCard.color"
+                    aria-hidden="true"
                 >
                     <!-- There's no switch case :') -->
                     <PhCoatHanger v-if="thisCard.icon == AccordionIcon.COAT_HANGER" />
@@ -81,10 +88,10 @@
                 </div>
 
             </div>
-        </div>
+        </button>
 
     </div>
-    <span class="opacity-50 text-xs ml-2">Click on a card to learn more!</span>
+    <span class="text-text-secondary-light dark:text-text-secondary-dark text-xs ml-2">Select a card to learn more!</span>
 
 </template>
 

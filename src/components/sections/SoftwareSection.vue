@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 17:31:02
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 17:18:53
+ * Last Modified: 2026-06-14 17:48:50
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -41,17 +41,19 @@
                         href="https://github.com/3urobeat"
                         target="_blank"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="GitHub"
+                        aria-label="GitHub (opens in new tab)"
+                        rel="noopener noreferrer"
                     >
-                        <span class="size-6 logo-github" aria-hidden></span>
+                        <span class="size-6 logo-github" aria-hidden="true"></span>
                     </a>
                     <a
                         href="https://codeberg.org/3urobeat"
                         target="_blank"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="Codeberg"
+                        aria-label="Codeberg (opens in new tab)"
+                        rel="noopener noreferrer"
                     >
-                        <span class="size-6 logo-codeberg" aria-hidden></span>
+                        <span class="size-6 logo-codeberg" aria-hidden="true"></span>
                     </a>
                 </div>
                 <div class="custom-external-anchor-multi">
@@ -63,17 +65,19 @@
                         href="https://github.com/wardrobe-hq"
                         target="_blank"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="GitHub"
+                        aria-label="GitHub (opens in new tab)"
+                        rel="noopener noreferrer"
                     >
-                        <span class="size-6 logo-github" aria-hidden></span>
+                        <span class="size-6 logo-github" aria-hidden="true"></span>
                     </a>
                     <a
                         href="https://codeberg.org/wardrobe-hq"
                         target="_blank"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="Codeberg"
+                        aria-label="Codeberg (opens in new tab)"
+                        rel="noopener noreferrer"
                     >
-                        <span class="size-6 logo-codeberg" aria-hidden></span>
+                        <span class="size-6 logo-codeberg" aria-hidden="true"></span>
                     </a>
                 </div>
                 <div class="custom-external-anchor-multi">
@@ -85,17 +89,19 @@
                         href="https://github.com/x3-fx"
                         target="_blank"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="GitHub"
+                        aria-label="GitHub (opens in new tab)"
+                        rel="noopener noreferrer"
                     >
-                        <span class="size-6 logo-github" aria-hidden></span>
+                        <span class="size-6 logo-github" aria-hidden="true"></span>
                     </a>
                     <a
                         href="https://codeberg.org/x3-fx"
                         target="_blank"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="Codeberg"
+                        aria-label="Codeberg (opens in new tab)"
+                        rel="noopener noreferrer"
                     >
-                        <span class="size-6 logo-codeberg" aria-hidden></span>
+                        <span class="size-6 logo-codeberg" aria-hidden="true"></span>
                     </a>
                 </div>
             </div>
@@ -138,7 +144,7 @@
                 <p>
                     Most recent commit:
                     <span class="text-text-variable">
-                        <span class="">{{ lastCommit?.timestamp ? formatTimestamp(lastCommit?.timestamp, "never") || "?" : "?" }}</span> ago @ <a :href="lastCommit?.repoUrl" target="_blank" class="hover:text-accent hover:underline hover:transition-colors">{{ lastCommit?.repoName || 'loading...' }}</a>
+                        <span class="">{{ lastCommit?.timestamp ? formatTimestamp(lastCommit?.timestamp, "never") || "?" : "?" }}</span> ago @ <a :href="lastCommit?.repoUrl" target="_blank" rel="noopener noreferrer" class="hover:text-accent hover:underline hover:transition-colors">{{ lastCommit?.repoName || 'loading...' }}</a>
                     </span>
                 </p>
 
@@ -257,5 +263,6 @@
             bgImgUrl: "https://raw.githubusercontent.com/3urobeat/nuxt-webserial/refs/heads/main/.github/img/demo.png"
         },
     ]);
+
 
 </script>

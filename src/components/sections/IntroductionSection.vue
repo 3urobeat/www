@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 13:50:07
+ * Last Modified: 2026-06-14 17:57:43
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -28,7 +28,7 @@
                 <div class="order-first lg:order-last size-32 lg:size-50 xl:size-65 rounded-full overflow-hidden shrink-0 ring-2 ring-white/10 shadow-lg">
                     <img
                         src="https://avatars.githubusercontent.com/u/35304405"
-                        alt="Avatar"
+                        alt="Tomke's avatar"
                         class="object-cover grayscale brightness-75 contrast-125"
                     />
                 </div>
@@ -43,7 +43,7 @@
                     </h1>
 
                     <!-- Table of Contents -->
-                    <nav class="mt-10 flex flex-col gap-3">
+                    <nav aria-label="Section navigation" class="mt-10 flex flex-col gap-3">
                         <a
                             v-for="link in navLinks"
                             :key="link.id"

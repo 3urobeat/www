@@ -5,7 +5,7 @@
  * Created Date: 2026-06-14 12:14:43
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 16:24:47
+ * Last Modified: 2026-06-14 17:50:02
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -19,7 +19,7 @@
 
 <template>
 
-    <div class="linktree-wrapper fixed inset-0 z-50 flex items-center justify-center overflow-hidden select-none">
+    <main class="linktree-wrapper fixed inset-0 z-50 flex items-center justify-center overflow-hidden">
         <div class="linktree-bg fixed inset-0 -z-10"></div>
 
         <div class="linktree-card custom-glass-pill relative w-full max-w-md mx-4 p-8 rounded-2xl shadow-2xl text-center max-h-[90vh] overflow-y-auto">
@@ -28,12 +28,12 @@
                 <div class="w-20 h-20 rounded-full bg-accent/20 flex items-center justify-center text-4xl">
                     <img
                         src="https://avatars.githubusercontent.com/u/35304405"
-                        alt="Avatar"
+                        alt="3urobeat's avatar"
                         class="object-cover shadow-md rounded-full"
                     />
                 </div>
-                <h2 class="text-2xl font-bold">3urobeat</h2>
-                <p class="text-sm opacity-60">Developer, SysAdmin & Music Producer</p>
+                <h1 class="text-xl font-bold">3urobeat</h1>
+                <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Developer, SysAdmin & Music Producer</p>
             </div>
 
             <div
@@ -41,7 +41,7 @@
                 :key="thisCategory.name"
                 class="mb-6 last:mb-0"
             >
-                <h2 class="text-xs uppercase tracking-widest opacity-40 mb-3 text-left">{{ thisCategory.name }}</h2>
+                <h2 class="text-xs uppercase tracking-widest text-text-secondary-light dark:text-text-secondary-dark mb-3 text-left">{{ thisCategory.name }}</h2>
 
                 <a
                     v-for="thisLink in thisCategory.links"
@@ -49,23 +49,24 @@
                     :href="thisLink.url"
                     target="_blank"
                     rel="noopener noreferrer"
+                    :aria-label="thisLink.label + (thisLink.url.startsWith('/') ? '' : ' (opens in new tab)')"
                     class="linktree-link flex items-center gap-3 w-full px-4 py-3 rounded-xl bg-white/10 dark:bg-white/5 hover:bg-white/20 dark:hover:bg-white/10 transition-all duration-300 mb-2 last:mb-0 group"
                 >
-                    <span class="text-lg shrink-0 opacity-70 group-hover:opacity-100 transition-opacity">
+                    <span class="text-lg shrink-0 opacity-70 group-hover:opacity-100 transition-opacity" aria-hidden="true">
                         <component :is="thisLink.icon" />
                     </span>
                     <span class="flex flex-col items-start">
                         <span class="text-sm font-medium">{{ thisLink.label }}</span>
-                        <span v-if="thisLink.subtitle" class="text-xs opacity-50">{{ thisLink.subtitle }}</span>
+                        <span v-if="thisLink.subtitle" class="text-xs text-text-secondary-light dark:text-text-secondary-dark">{{ thisLink.subtitle }}</span>
                     </span>
-                    <span class="ml-auto text-xs opacity-30 group-hover:opacity-60 transition-opacity">
+                    <span v-if="!thisLink.url.startsWith('/')" class="ml-auto text-xs text-text-secondary-light dark:text-text-secondary-dark group-hover:text-text-light dark:group-hover:text-text-dark transition-colors" aria-hidden="true">
                         <PhArrowSquareOut />
                     </span>
                 </a>
             </div>
 
         </div>
-    </div>
+    </main>
 
 </template>
 
@@ -121,6 +122,7 @@
 
 <script setup lang="ts">
     import {
+        PhAppleLogo,
         PhArrowSquareOut,
         PhBracketsCurly,
         PhBrowsers,
@@ -153,7 +155,6 @@
             name: "Social",
             links: [
                 { label: "Homepage", url: "/", icon: PhBrowsers, subtitle: "Portfolio" }
-                /* { label: "YouTube", url: "https://youtube.com/@3urobeat", icon: PhYoutubeLogo, subtitle: "3urobeat" } */
             ]
         },
         {
@@ -168,6 +169,7 @@
             links: [
                 { label: "SoundCloud", url: "https://soundcloud.com/3urobeat", icon: PhMusicNotesSimple, subtitle: "3urobeat" },
                 { label: "Spotify", url: "https://open.spotify.com/artist/6N9JhTJqOCBYHdZAvptJKS", icon: PhHeadphones, subtitle: "3urobeat" },
+                { label: "Apple Music", url: "https://music.apple.com/us/artist/3urobeat/1764177108", icon: PhAppleLogo, subtitle: "3urobeat" },
                 { label: "SoundCloud", url: "https://soundcloud.com/projekt-33", icon: PhMusicNotesSimple, subtitle: "Projekt 33" },
             ]
         },
