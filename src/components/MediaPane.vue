@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 17:31:28
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-09 21:35:22
+ * Last Modified: 2026-06-14 19:46:57
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -26,6 +26,23 @@
             :class="currentSection === section.id ? 'opacity-100 scale-100' : 'opacity-0 scale-105'"
         >
             <div class="absolute inset-0" :style="{ background: section.bg }"></div>
+        </div>
+
+        <!-- Falling particles animation -->
+        <div class="pointer-events-none absolute inset-0 overflow-hidden left-1/3" id="particles-animation">
+            <div
+                v-for="p in particles"
+                :key="p.id"
+                class="particle"
+                :style="{
+                    left: p.x + '%',
+                    width: p.size + 'px',
+                    height: p.size + 'px',
+                    animationDelay: p.delay + 's',
+                    animationDuration: p.duration + 's',
+                    opacity: p.opacity,
+                }"
+            ></div>
         </div>
     </div>
 </template>
@@ -55,4 +72,43 @@
             bg: "linear-gradient(135deg, #1c1917 0%, #292524 50%, #1c1917 100%)",
         },
     ];
+
+    // Particles for rain animation
+    const particles = Array.from({ length: 30 }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        size: Math.random() * 6 + 1,
+        delay: Math.random() * 10,
+        duration: Math.random() * 4 + 3,
+        opacity: Math.random() * 0.4 + 0.1,
+    }));
 </script>
+
+
+<style scoped>
+    .particle {
+        position: absolute;
+        top: -10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.6);
+        animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(-10px) translateX(0);
+        }
+        25% {
+            transform: translateY(25vh) translateX(15px);
+        }
+        50% {
+            transform: translateY(50vh) translateX(-10px);
+        }
+        75% {
+            transform: translateY(75vh) translateX(20px);
+        }
+        100% {
+            transform: translateY(105vh) translateX(-5px);
+        }
+    }
+</style>
