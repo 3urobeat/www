@@ -1,0 +1,42 @@
+{
+  "name": "www",
+  "version": "3",
+  "description": "3urobeat's personal homepage",
+  "type": "module",
+  "scripts": {
+    "lint": "tsc -p . ; eslint .",
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build && node scripts/prerender.mjs",
+    "build:noprerender": "vue-tsc -b && vite build",
+    "start": "vite preview",
+    "bs": "npm run build && npm run start",
+    "clean": "rm -r dist/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3urobeat/website.git"
+  },
+  "author": "3urobeat",
+  "dependencies": {
+    "@phosphor-icons/vue": "^2.2.1",
+    "@tailwindcss/vite": "^4.2.2",
+    "tailwindcss": "^4.2.2",
+    "tailwindcss-intersect": "^2.2.0",
+    "vue": "^3.5.32"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.2",
+    "@typescript-eslint/parser": "^8.58.2",
+    "@vitejs/plugin-vue": "^6.0.6",
+    "@vue/tsconfig": "^0.9.1",
+    "eslint": "^10.2.0",
+    "eslint-plugin-jsdoc": "^62.9.0",
+    "globals": "^17.5.0",
+    "puppeteer-core": "^25.1.0",
+    "typescript": "~6.0.2",
+    "typescript-eslint": "^8.58.2",
+    "vite": "^8.0.4",
+    "vue-tsc": "^3.2.6"
+  }
+}

@@ -1,2 +1,2 @@
-# Website
-My small and dirty website running on my home server: https://3urobeat.com
+# www
+My web presence at https://3urobeat.com :)
