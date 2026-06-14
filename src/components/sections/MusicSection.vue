@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 17:31:22
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 13:44:31
+ * Last Modified: 2026-06-14 17:48:46
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -41,24 +41,27 @@
                     <a
                         href="https://open.spotify.com/artist/6N9JhTJqOCBYHdZAvptJKS"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="Spotify"
+                        aria-label="Spotify (opens in new tab)"
                     >
                         <PhSpotifyLogo class="size-6 shrink-0" />
                     </a>
                     <a
                         href="https://music.apple.com/us/artist/3urobeat/1764177108"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="Apple Music"
+                        aria-label="Apple Music (opens in new tab)"
                     >
                         <PhAppleLogo class="size-6 shrink-0" />
                     </a>
                     <a
                         href="https://soundcloud.com/3urobeat"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="SoundCloud"
+                        aria-label="SoundCloud (opens in new tab)"
                     >
                         <PhSoundcloudLogo class="size-6 shrink-0" />
                     </a>
@@ -69,27 +72,18 @@
                         <PhUser class="size-6 shrink-0" />
                         Projekt 33
                     </span>
-                    <a
-                        href=""
-                        target="_blank"
-                        class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="Spotify"
-                    >
+                    <span class="flex items-center justify-center px-3 py-2 text-text-muted" title="Coming soon">
                         <PhSpotifyLogo class="size-6 shrink-0" />
-                    </a>
-                    <a
-                        href=""
-                        target="_blank"
-                        class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="Apple Music"
-                    >
+                    </span>
+                    <span class="flex items-center justify-center px-3 py-2 text-text-muted" title="Coming soon">
                         <PhAppleLogo class="size-6 shrink-0" />
-                    </a>
+                    </span>
                     <a
                         href="https://soundcloud.com/projekt-33"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="flex items-center justify-center px-3 py-2 hover:text-accent transition-colors"
-                        aria-label="SoundCloud"
+                        aria-label="SoundCloud (opens in new tab)"
                     >
                         <PhSoundcloudLogo class="size-6 shrink-0" />
                     </a>

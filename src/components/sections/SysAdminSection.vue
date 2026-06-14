@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 17:31:14
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 16:27:56
+ * Last Modified: 2026-06-14 17:48:59
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -90,7 +90,7 @@
                 <p>
                     <span>
                         Set up your Linux machine faster by checking out my
-                        <a href="https://github.com/3urobeat/dotfiles" target="_blank" class="-mr-[1ch] text-text-variable hover:text-accent hover:underline hover:transition-colors">Dotfiles</a>
+                        <a href="https://github.com/3urobeat/dotfiles" target="_blank" rel="noopener noreferrer" class="-mr-[1ch] text-text-variable hover:text-accent hover:underline hover:transition-colors">Dotfiles</a>
                         <!-- and
                         <a href="" target="_blank" class="-mr-[1ch] text-text-variable hover:text-accent hover:underline hover:transition-colors">Guides</a> -->
                         !
