@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-12 21:50:19
+ * Last Modified: 2026-06-14 13:50:07
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -50,7 +50,7 @@
                             :href="`#${link.id}`"
                             class="group flex items-center gap-2 text-base sm:text-lg hover:text-accent transition-colors"
                         >
-                            <span class="w-6 h-px bg-text-muted group-hover:w-12 group-hover:bg-accent transition-all duration-300"></span>
+                            <span class="w-6 h-px bg-text-muted dark:bg-text-muted/70! group-hover:w-12 group-hover:bg-accent transition-all duration-300"></span>
                             <span>{{ link.label }}</span>
                         </a>
                     </nav>

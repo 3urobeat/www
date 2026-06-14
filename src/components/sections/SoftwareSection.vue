@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 17:31:02
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 17:14:03
+ * Last Modified: 2026-06-14 17:18:53
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -250,7 +250,7 @@
         },
         {
             title: "Webserial in Nuxt",
-            description: "I've created a blueprint implementation of bidirectional Webbrowser <-> USB Device communication via WebSerial in Nuxt",
+            description: "A blueprint implementation of bidirectional Webbrowser <-> USB Device communication via WebSerial in Nuxt",
             color: accordionColors.fuchsia,
             icon: AccordionIcon.BROWSERS,
             clickUrl: "https://github.com/3urobeat/nuxt-webserial",
