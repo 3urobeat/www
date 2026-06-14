@@ -5,7 +5,7 @@
  * Created Date: 2026-05-25 22:28:19
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-10 20:44:23
+ * Last Modified: 2026-06-14 13:46:11
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -39,7 +39,7 @@
             <!-- TODO: Linktree hyperlink button -->
             <a
                 class="flex px-1.5 py-0.5 hover:text-bg-input-hover-light hover:transition-all"
-                href=""
+                href="/linktree"
             >
                 <PhLink class="size-5.5 transition-opacity" />
             </a>
