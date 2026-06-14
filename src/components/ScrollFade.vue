@@ -1,11 +1,11 @@
 <!--
 /*
- * File: index.html
+ * File: ScrollFade.vue
  * Project: www
- * Created Date: 2026-04-14 18:28:09
+ * Created Date: 2026-05-23 17:30:45
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:09
+ * Last Modified: 2026-06-09 20:21:15
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -17,20 +17,12 @@
 -->
 
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <!-- Include global script. Load after css to fix styling issues on page load -->
-        <script src="/global.js"></script>
-
-        <title>3urobeat - Portfolio</title>
-    </head>
-    <body>
-        <div id="app"></div>
-        <script type="module" src="/src/main.ts"></script>
-    </body>
-</html>
+<template>
+    <!-- Use no-intersect to trigger on page load, see: https://github.com/heidkaemper/tailwindcss-intersect/issues/9 -->
+    <div
+        class="transition-all duration-1500 ease-out opacity-0 translate-y-8 intersect:opacity-100 intersect:translate-y-0 intersect-once"
+        no-intersect
+    >
+        <slot />
+    </div>
+</template>

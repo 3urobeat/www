@@ -1,0 +1,220 @@
+/*
+ * File: style.css
+ * Project: www
+ * Created Date: 2026-04-14 18:25:13
+ * Author: 3urobeat
+ *
+ * Last Modified: 2026-06-12 22:49:24
+ * Modified By: 3urobeat
+ *
+ * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
+ *
+ * This program is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
+ * You should have received a copy of the GNU Affero General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
+
+@import "tailwindcss";
+@import "tailwindcss-intersect";
+
+
+html {
+    font-family: 'RenoMono', monospace;
+}
+
+/* Set global background and text color rules */
+body {
+    @apply bg-bg-light dark:bg-bg-dark transition-colors text-text-light dark:text-text-dark overflow-hidden;
+}
+
+/* Apply background to text in dark mode to fix text becoming invisible when overflowing into media pane and being color-inverted */
+span { /* Search Tag: span-bg-invert */
+    @apply dark:bg-bg-dark dark:rounded-md;
+}
+
+/* Can be used to clip content to either the left (content) or right (media) side of the page */
+.left-clip {
+    clip-path: url(#leftClip);
+}
+
+.right-clip {
+    clip-path: url(#rightClip);
+}
+
+/* Inverts colors of everything behind it */
+.backdrop-invert {
+    backdrop-filter: invert(1);
+    -webkit-backdrop-filter: invert(1);
+}
+
+/* Hides no JS warning */
+html.js #js-disabled-banner {
+    display: none;
+}
+
+/* I'd like bullet points in my lists, thanks */
+ul {
+    list-style-type: disc;
+    padding: 10px 0 !important;
+    padding-left: 20px !important;
+}
+
+
+/* Colors */
+@theme {
+    --color-bg-light: #f8f9fa;
+    --color-bg-dark: #181a1b;
+    --color-bg-secondary-light: #e9ecef;
+
+    --color-bg-input-click-light: #c0c0c2;
+    --color-bg-input-click-dark: #2f3335;
+    --color-bg-input-hover-light: #d9dadc;
+    --color-bg-input-hover-dark: #25282a;
+    --color-bg-input-light: #e8e9eb;
+    --color-bg-input-dark: #202224;
+
+    --color-bg-field-click-light: #d3d4d6;
+    --color-bg-field-click-dark: #333639;
+    --color-bg-field-hover-light: #e2e3e5;
+    --color-bg-field-hover-dark: #242628;
+    --color-bg-field-light: #f2f3f4;
+    --color-bg-field-dark: #2a2d2f;
+
+    --color-text-light: #1a1a2e;
+    --color-text-dark: #e8e6e3;
+
+    --color-text-secondary-dark: #bdbdbd;
+    --color-text-secondary-light: #4a5565; /* or #6c757d ? */
+
+    --color-text-variable: #99a1af; /* gray-400 */
+
+    --color-text-muted: #adb5bd;
+
+    --color-border-primary-light: #585c63; /* TODO: Where is this used? custom-input-primary uses secondary border but custom-input-secondary uses this primary one, bit weird */
+    --color-border-primary-dark: #565d5f;
+
+    --color-border-secondary-light: #9198a3;
+    --color-border-secondary-dark: #697274;
+
+    --color-accent: #6366f1;
+    --color-accent-hover: #4f46e5;
+}
+
+
+/* Color combinations */
+/* TODO: Pre-made combinations of "x-light dark:x-dark" would clean up so much */
+
+
+/* Dark Mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    button:not(:disabled),
+    [role="button"]:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
+
+/* Reusable Custom Components */
+
+/* Primary button, used in various places on <button> container. Put Icon and Text inside. */
+.custom-button-primary {
+    @apply flex items-center justify-center h-8 py-1 px-3 rounded-md shadow-md cursor-pointer bg-bg-input-light dark:bg-bg-input-dark outline-border-primary-light dark:outline-border-primary-dark outline-2 hover:bg-bg-input-hover-light hover:dark:bg-bg-input-hover-dark active:bg-bg-input-click-light active:dark:bg-bg-input-click-dark hover:transition-all disabled:bg-bg-input-hover-light disabled:dark:bg-bg-input-hover-dark disabled:cursor-not-allowed;
+}
+
+
+.custom-external-anchor-multi {
+    @apply flex items-stretch rounded-xl shadow-md hover:shadow-lg border border-white/10 bg-bg-field-light dark:bg-bg-field-dark hover:bg-bg-field-hover-light hover:dark:bg-bg-field-hover-dark p-1 hover:border-accent/30 transition-all duration-500 divide-x divide-border-secondary-light dark:divide-border-secondary-dark
+}
+.custom-external-anchor-multi > span { /* Counteract span-bg-invert */
+    @apply bg-white/0 rounded-none
+}
+
+
+/* Liquid glass effect */
+.custom-glass-pill {
+    @apply backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 40%, rgba(255,255,255,0.05) 100%);
+}
+
+.dark .custom-glass-pill {
+    background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.04) 40%, rgba(255,255,255,0.01) 100%);
+}
+
+
+/* Typing animation – repeats with fade-back every 10s */
+@keyframes typing {
+    0%   { width: 0; opacity: 0; }
+    4%   { width: 0; opacity: 1; }
+    8%   { width: 1.3ch; opacity: 1; } /* Added .3 to avoid cursor clipping into text */
+    12%  { width: 2.3ch; opacity: 1; }
+    16%  { width: 3.3ch; opacity: 1; }
+    20%  { width: 4.3ch; opacity: 1; }
+    24%  { width: 5.3ch; opacity: 1; }
+    78%  { width: 5.3ch; opacity: 1; }
+    90%  { width: 0; opacity: 0; }
+    100% { width: 0; opacity: 0; }
+}
+
+@keyframes blink-caret { 50% { border-color: transparent; } }
+
+.typing-animation {
+    @apply border-r-[.2ch] border-text-light dark:border-text-dark rounded-none;
+    white-space: nowrap;
+    display: inline-flex;
+    overflow: hidden;
+    animation: typing 7s infinite, blink-caret 1s steps(1, end) infinite;
+}
+
+
+/* Count animation from https://freefrontend.com/tailwind-counter/ - https://codepen.io/cruip/pen/jOXzrJq */
+@property --count-animation {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+
+
+/* List elements fade in animation. This must be a Tailwind utility to make intersect: work */
+@utility custom-list-fadein {
+  > li {
+    opacity: 0;
+    animation: list-fade 700ms cubic-bezier(.2,.9,.2,1) forwards;
+  }
+
+  > li:nth-child(1)  { animation-delay: 0s;    }
+  > li:nth-child(2)  { animation-delay: 0.13s; }
+  > li:nth-child(3)  { animation-delay: 0.26s; }
+  > li:nth-child(4)  { animation-delay: 0.39s; }
+  > li:nth-child(5)  { animation-delay: 0.52s; }
+  > li:nth-child(6)  { animation-delay: 0.65s; }
+  > li:nth-child(7)  { animation-delay: 0.78s; }
+  > li:nth-child(8)  { animation-delay: 0.91s; }
+  > li:nth-child(9)  { animation-delay: 1.04s; }
+  > li:nth-child(10) { animation-delay: 1.17s; }
+
+  > li > ul > li:nth-child(1)  { animation-delay: 1.30s; } /* Support nested ul's */
+  > li > ul > li:nth-child(2)  { animation-delay: 1.43s; }
+  > li > ul > li:nth-child(3)  { animation-delay: 1.56s; }
+  > li > ul > li:nth-child(4)  { animation-delay: 1.69s; }
+  > li > ul > li:nth-child(5)  { animation-delay: 1.82s; }
+}
+
+@keyframes list-fade {
+  from { opacity: 0; transform: translateY(8px) scale(.995); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+
+/* Global Logos */
+.logo-github {
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath class='st0' d='M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+}
+
+.logo-codeberg {
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath class='st0' d='M11.955.49A12 12 0 0 0 0 12.49a12 12 0 0 0 1.832 6.373L11.838 5.928a.187.14 0 0 1 .324 0l10.006 12.935A12 12 0 0 0 24 12.49a12 12 0 0 0-12-12zm.375 6.467 4.416 16.553a12 12 0 0 0 5.137-4.213z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+}

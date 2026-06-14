@@ -1,11 +1,11 @@
 <!--
 /*
- * File: index.html
+ * File: app.vue
  * Project: www
- * Created Date: 2026-04-14 18:28:09
+ * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:09
+ * Last Modified: 2026-06-14 16:22:47
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -17,20 +17,15 @@
 -->
 
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<template>
 
-        <!-- Include global script. Load after css to fix styling issues on page load -->
-        <script src="/global.js"></script>
+    <!-- Link to src/pages/IndexPage.vue -->
+    <IndexPage />
 
-        <title>3urobeat - Portfolio</title>
-    </head>
-    <body>
-        <div id="app"></div>
-        <script type="module" src="/src/main.ts"></script>
-    </body>
-</html>
+</template>
+
+
+<script setup lang="ts">
+    import IndexPage from "./components/pages/IndexPage.vue";
+
+</script>

@@ -1,11 +1,10 @@
-<!--
 /*
- * File: index.html
+ * File: vite.config
  * Project: www
- * Created Date: 2026-04-14 18:28:09
+ * Created Date: 2026-04-14 18:28:52
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:28:09
+ * Last Modified: 2026-06-14 15:37:57
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -14,23 +13,26 @@
  * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
  * You should have received a copy of the GNU Affero General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
--->
 
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import tailwindcss from "@tailwindcss/vite";
+import { resolve } from "path";
 
-        <!-- Include global script. Load after css to fix styling issues on page load -->
-        <script src="/global.js"></script>
 
-        <title>3urobeat - Portfolio</title>
-    </head>
-    <body>
-        <div id="app"></div>
-        <script type="module" src="/src/main.ts"></script>
-    </body>
-</html>
+// https://vite.dev/config/
+export default defineConfig({
+    plugins: [
+        tailwindcss(),
+        vue(),
+    ],
+    build: {
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, "index.html"),
+                linktree: resolve(__dirname, "linktree.html"),
+            },
+        },
+    },
+});
