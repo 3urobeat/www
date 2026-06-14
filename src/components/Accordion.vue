@@ -5,7 +5,7 @@
  * Created Date: 2026-05-28 17:11:32
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-13 16:52:01
+ * Last Modified: 2026-06-14 11:33:06
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -22,13 +22,13 @@
 
 <template>
 
-    <div class="flex flex-col grow sm:flex-row sm:h-72 items-stretch sm:min-w-md sm:overflow-hidden">
+    <div class="flex flex-col grow sm:flex-row items-stretch sm:min-w-md sm:overflow-hidden">
 
         <div
             v-for="(thisCard, index) in cards"
             :key="thisCard.title"
-            class="cursor-pointer duration-500 ease-out grow group m-2 min-h-14 sm:min-w-14 shadow-md overflow-hidden pane relative rounded-3xl transition-all"
-            :class="index == activePaneIndex ? 'max-w-125' : 'max-w-0'"
+            class="cursor-pointer duration-500 ease-out grow group m-2 min-h-14 h-60 sm:min-w-14 shadow-md overflow-hidden pane relative rounded-3xl transition-all"
+            :class="index == activePaneIndex ? 'sm:max-w-125 max-sm:max-h-96' : 'sm:max-w-0 max-sm:max-h-0'"
             @click="handleCardClick(index)"
         >
             <!-- Background -->
