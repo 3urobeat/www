@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 15:15:40
+ * Last Modified: 2026-06-14 16:22:47
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -19,7 +19,7 @@
 
 <template>
 
-    <!-- Home Page -->
+    <!-- Link to src/pages/IndexPage.vue -->
     <IndexPage />
 
 </template>
