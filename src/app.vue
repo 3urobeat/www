@@ -5,7 +5,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-12 18:07:42
+ * Last Modified: 2026-06-14 15:15:40
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -19,120 +19,13 @@
 
 <template>
 
-    <header id="titlebar" class="z-50">
-        <TitleBar />
-    </header>
-
-
-    <main>
-        <!-- Left Side - Page Content -->
-        <div class="fixed inset-0 z-10" id="left-content">
-            <div ref="scrollContainer" class="h-full overflow-y-auto scroll-smooth">
-                <IntroductionSection />
-
-                <SoftwareSection />
-
-                <SysAdminSection />
-
-                <MusicSection />
-            </div>
-        </div>
-
-
-        <!-- Color-invert overlay for content that overflows into the right media area -->
-        <div class="fixed inset-0 z-15 pointer-events-none right-clip backdrop-invert dark:backdrop-invert-100" id="overflowInvertMask" aria-hidden="true"></div>
-
-        <!-- Squiggly Divider Line -->
-        <svg
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-            class="fixed inset-0 w-full h-full pointer-events-none z-20"
-            aria-hidden="true"
-        >
-            <defs>
-                <filter id="dividerGlow">
-                    <feGaussianBlur stdDeviation="1.5" result="blur" />
-                    <feMerge>
-                        <feMergeNode in="blur" />
-                        <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                </filter>
-            </defs>
-
-            <path
-                d="M 40,-1 C 45,10 50,20 66.7,33.3 C 75,45 82,60 80,72 C 78,82 90,88 95,101"
-                stroke="var(--color-text-muted, #adb5bd)"
-                stroke-width="1.5"
-                fill="none"
-                opacity="0.5"
-                filter="url(#dividerGlow)"
-            />
-        </svg>
-
-        <!-- Squiggly Divider Border. Path follows path above, roughly divided by 100 -->
-        <svg aria-hidden="true" class="absolute w-0 h-0 pointer-events-none" id="right-bg">
-            <defs>
-                <clipPath id="leftClip" clipPathUnits="objectBoundingBox">
-                    <path d="M 0,0 L 0.36,-0.1 C 0.44,0.10 0.50,0.20 0.667,0.333 C 0.75,0.45 0.82,0.60 0.80,0.72 C 0.78,0.82 0.90,0.88 0.95,1.01 L 0,1 Z" />
-                </clipPath>
-                <!-- Clips for the left side and right side -->
-                <clipPath id="rightClip" clipPathUnits="objectBoundingBox">
-                    <path d="M 0.36,-0.1 L 1,-0.1 L 1,1.01 L 0.95,1.01 C 0.90,0.88 0.78,0.82 0.80,0.72 C 0.82,0.60 0.75,0.45 0.667,0.333 C 0.50,0.20 0.44,0.10 0.36,-0.1 Z" />
-                </clipPath>
-            </defs>
-        </svg>
-
-        <!-- Right Side Content. We need to invert it to counteract overflowInvertMask so that only affects the content overflow -->
-        <div class="fixed inset-0 z-0 invert right-clip" id="right-media">
-            <MediaPane :current-section="currentSection" />
-        </div>
-    </main>
-
-
-    <!-- Footer -->
-    <footer class="fixed z-20 text-nowrap bottom-0 pb-2 px-2.5 select-none">
-        <Footer />
-    </footer>
+    <!-- Home Page -->
+    <IndexPage />
 
 </template>
 
 
 <script setup lang="ts">
-    import { onMounted, ref } from "vue";
-    import SoftwareSection from "./components/sections/SoftwareSection.vue";
-    import SysAdminSection from "./components/sections/SysAdminSection.vue";
-    import MusicSection from "./components/sections/MusicSection.vue";
-    import MediaPane from "./components/MediaPane.vue";
-    import IntroductionSection from "./components/sections/IntroductionSection.vue";
-    import TitleBar from "./components/TitleBar.vue";
-    import Footer from "./components/Footer.vue";
-
-
-    // Observe which section is currently visible and update media pane
-    // Would be cool to reuse the Tailwind intersect plugin as it already has a JS-based intersection observer
-    const currentSection  = ref("intro");
-    const scrollContainer = ref<HTMLElement | null>(null);
-    const sectionIds      = ["intro", "software", "sysadmin", "music"];
-
-    onMounted(() => {
-        const el = scrollContainer.value;
-        if (!el) return;
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                for (const entry of entries) {
-                    if (entry.isIntersecting) {
-                        // console.log("Section Entry: " + entry.target.id)
-                        currentSection.value = entry.target.id;
-                    }
-                }
-            }
-        );
-
-        for (const id of sectionIds) {
-            const target = el.querySelector(`#${id}`);
-            if (target) observer.observe(target);
-        }
-    });
+    import IndexPage from "./components/pages/IndexPage.vue";
 
 </script>
