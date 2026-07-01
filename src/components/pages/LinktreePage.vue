@@ -184,7 +184,8 @@
         {
             name: "Contact",
             links: [
-                { label: "Email", url: "mailto:contact@3urobeat.com", icon: PhEnvelope, subtitle: "contact@3urobeat.com" }
+                /* { label: "Email", url: "mailto:contact@3urobeat.com", icon: PhEnvelope, subtitle: "contact@3urobeat.com" } */
+                { label: "Email", url: "mailto:contact@goritz.org", icon: PhEnvelope, subtitle: "contact@goritz.org" }
             ]
         }
     ];
