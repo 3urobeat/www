@@ -22,11 +22,14 @@
     "@tailwindcss/vite": "^4.2.2",
     "tailwindcss": "^4.2.2",
     "tailwindcss-intersect": "^2.2.0",
+    "three": "^0.184.0",
+    "three-stdlib": "^2.36.1",
     "vue": "^3.5.32"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^24.12.2",
+    "@types/three": "^0.184.1",
     "@typescript-eslint/parser": "^8.58.2",
     "@vitejs/plugin-vue": "^6.0.6",
     "@vue/tsconfig": "^0.9.1",
