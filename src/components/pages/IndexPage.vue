@@ -5,7 +5,7 @@
  * Created Date: 2026-06-14 15:11:49
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 15:14:02
+ * Last Modified: 2026-07-02 17:43:01
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -27,6 +27,18 @@
     <main>
         <!-- Left Side - Page Content -->
         <div class="fixed inset-0 z-10" id="left-content">
+            <!-- Background layer -->
+            <div class="fixed inset-0 left-clip pointer-events-none" :style="{ opacity: backgroundOpacity }">
+                <div aria-hidden="true"
+                    class="h-3/4 bg-cover bg-center bg-no-repeat"
+                    :style="{ backgroundImage: `url(${backgroundImage})` }">
+                </div>
+                <div aria-hidden="true"
+                    class="fixed inset-0 h-3/4 bg-linear-to-b from-transparent to-bg-light dark:to-bg-dark">
+                </div>
+            </div>
+
+            <!-- Content layer -->
             <div ref="scrollContainer" class="h-full overflow-y-auto scroll-smooth">
                 <IntroductionSection />
 
@@ -106,6 +118,10 @@
     import IntroductionSection from "../sections/IntroductionSection.vue";
     import TitleBar from "../TitleBar.vue";
     import Footer from "../Footer.vue";
+    import backgroundImage from "../../assets/introduction-background.jpg";
+
+
+    const backgroundOpacity = ref(0.75);
 
 
     // Observe which section is currently visible and update media pane
@@ -133,6 +149,21 @@
             const target = el.querySelector(`#${id}`);
             if (target) observer.observe(target);
         }
+
+        // Add scroll observer for decreasing fixed img intensity when not viewing introduction
+        const distanceToIntro = el.querySelector("#intro") as HTMLElement | null;
+        if (!distanceToIntro) return;
+
+        const updateOpacity = () => {
+            const rect = distanceToIntro.getBoundingClientRect();
+            const visible = Math.max(0, Math.min(1,
+                (Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0)) / window.innerHeight
+            ));
+            backgroundOpacity.value = 0.15 + visible * 0.6;
+        };
+
+        el.addEventListener("scroll", updateOpacity, { passive: true });
+        updateOpacity();
     });
 
 </script>
