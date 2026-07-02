@@ -4,7 +4,7 @@
  * Created Date: 2026-06-07 12:40:48
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-13 15:48:05
+ * Last Modified: 2026-07-02 19:40:51
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -39,7 +39,7 @@ export function formatTimestamp(timestamp: number, alwaysShowTimestamp?: "always
     let until = Math.abs((Date.now() - timestamp) / 1000);
     let untilUnit = "seconds";
 
-    if (until < 86400 && (!alwaysShowTimestamp || alwaysShowTimestamp == "never")) { // 24h in sec
+    if (alwaysShowTimestamp == "never" || (until < 86400 && !alwaysShowTimestamp)) { // 24h in sec
         if (until > 60) {
             until = until / 60; untilUnit = "minutes";
 
