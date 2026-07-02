@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 17:57:43
+ * Last Modified: 2026-07-02 17:42:27
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -25,12 +25,17 @@
             <div class="flex flex-col lg:flex-row lg:items-center lg:-mt-24 gap-y-10 min-h-screen"> <!-- -mt-24 is to compensate SectionContainer's top offset when using items-center -->
 
                 <!-- Avatar -->
-                <div class="order-first lg:order-last size-32 lg:size-50 xl:size-65 rounded-full overflow-hidden shrink-0 ring-2 ring-white/10 shadow-lg">
+                <!-- <div class="order-first lg:order-last size-32 lg:size-50 xl:size-65 rounded-full overflow-hidden shrink-0 ring-2 ring-white/10 shadow-lg">
                     <img
                         src="https://avatars.githubusercontent.com/u/35304405"
                         alt="Tomke's avatar"
                         class="object-cover grayscale brightness-75 contrast-125"
                     />
+                </div> -->
+
+                <!-- Interactive 3D Model -->
+                <div class="order-first lg:order-last w-40 h-90 md:w-55 md:h-105 lg:w-60 lg:h-110">
+                    <ThreedModelViewer ref="viewerRef" modelUrl="/3d-model/mannequin.glb" :xRotationLimit="0.5" />
                 </div>
 
                 <div class="lg:w-2/5 shrink-0">
@@ -71,6 +76,7 @@
 <script setup lang="ts">
     import { getYearDiffWithMonthPrecision } from "../../utils/utils";
     import SectionContainer from "../SectionContainer.vue";
+    import ThreedModelViewer from "../ThreedModelViewer.vue";
 
     const navLinks = [
         { id: "software", label: "Full Stack Software Developer" },
