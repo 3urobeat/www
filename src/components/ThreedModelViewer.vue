@@ -5,7 +5,7 @@
  * Created Date: 2026-01-31 17:03:57
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-24 20:32:40
+ * Last Modified: 2026-07-02 17:41:50
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -24,42 +24,36 @@
 
 <template>
 
-    <div ref="parentContainer" class="h-full w-full">
+    <div ref="parentContainer" class="relative h-full w-full">
         <!-- Renderer Canvas Container -->
         <div
             ref="canvasContainer"
             id="3d-model-viewer-container"
-            class="absolute cursor-grab left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            class="cursor-grab"
             @mousedown="rendererOnMouseDown"
-            @mouseup="rendererOnMouseUp"
-            @mousemove="rendererOnMouseMove"
-            @mouseleave="rendererOnMouseUp"
             @touchstart="rendererOnTouchDown"
-            @touchend="rendererOnMouseUp"
-            @touchmove="rendererOnTouchMove"
-            @touchcancel="rendererOnMouseUp"
-        >
+        >                   <!-- absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 -->
         </div>
 
         <!-- Auto Spin toggle -->
-        <button class="absolute right-0 top-0 m-4 custom-button-icon-only" :class="autoRotationEnabled ? 'bg-green-500/50!' : ''"
+        <button class="absolute right-0 top-0 m-4 flex items-center rounded-xl shadow-md hover:shadow-lg custom-glass-pill gap-3 p-2 justify-center transition-all duration-300" :class="autoRotationEnabled ? 'bg-green-500/50!' : ''"
             title="Toggle Auto Rotation" @click="autoRotationEnabled = !autoRotationEnabled"
         >
-            <PhArrowCounterClockwise class="ml-0.25 size-5"></PhArrowCounterClockwise>
+            <PhArrowCounterClockwise class="ml-0.25 size-5" />
         </button>
 
         <!-- Indicator that canvas is rotatable -->
-        <div class="absolute flex justify-between bottom-1/8 w-full">
+        <!-- <div class="absolute flex justify-between bottom-1/8 w-full">
             <PhCaretLeft class="custom-label-icon-only size-7 ml-4 sm:ml-12"></PhCaretLeft>
             <PhCaretRight class="custom-label-icon-only size-7 mr-4 sm:mr-12"></PhCaretRight>
-        </div>
+        </div> -->
     </div>
 
 </template>
 
 
 <script setup lang="ts">
-    import { PhArrowCounterClockwise, PhCaretLeft, PhCaretRight } from "@phosphor-icons/vue";
+    import { PhArrowCounterClockwise } from "@phosphor-icons/vue";
     import * as threeJs from "three";
     import { GLTFLoader, type GLTF } from "three-stdlib";
     import { onMounted, ref, type Ref } from "vue";
@@ -80,7 +74,7 @@
     let rendererMouseX      = 0;
     let rendererMouseY      = 0;
 
-    const cameraPadding = 1.2;
+    const cameraPadding = 1;
 
 
     // Updates size of renderer if container got resized
@@ -181,7 +175,7 @@
             canvasContainer.value!.appendChild(renderer.domElement);
 
             // Create some light so the model is viewable
-            const light = new threeJs.HemisphereLight(0xffffff, 1);
+            const light = new threeJs.HemisphereLight(0xffffff, undefined, 1.5);
             light.position.y = 5;
             light.position.z = 5;
             light.position.x = 5;
@@ -262,6 +256,9 @@
         // Set starting position to calculate delta on mouseMove
         rendererMouseX = evt.clientX;
         rendererMouseY = evt.clientY;
+
+        document.addEventListener('mousemove', rendererOnMouseMove);
+        document.addEventListener('mouseup', rendererOnMouseUp);
     }
 
     function rendererOnTouchDown(evt: TouchEvent) {
@@ -273,11 +270,21 @@
             rendererMouseX = evt.touches[0].clientX;
             rendererMouseY = evt.touches[0].clientY;
         }
+
+        document.addEventListener('touchmove', rendererOnTouchMove);
+        document.addEventListener('touchend', rendererOnMouseUp);
+        document.addEventListener('touchcancel', rendererOnMouseUp);
     }
 
     function rendererOnMouseUp(evt: MouseEvent | TouchEvent) {
         evt.preventDefault();
         rendererIsMouseDown = false;
+
+        document.removeEventListener('mousemove', rendererOnMouseMove);
+        document.removeEventListener('mouseup', rendererOnMouseUp);
+        document.removeEventListener('touchmove', rendererOnTouchMove);
+        document.removeEventListener('touchend', rendererOnMouseUp);
+        document.removeEventListener('touchcancel', rendererOnMouseUp);
     }
 
 
@@ -360,7 +367,6 @@
     });
 
     // Define stuff that can be accessed by the page
-    defineExpose({
-    });
+    defineExpose({ });
 
 </script>
