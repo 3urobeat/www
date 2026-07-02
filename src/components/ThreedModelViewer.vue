@@ -5,7 +5,7 @@
  * Created Date: 2026-01-31 17:03:57
  * Author: 3urobeat
  *
- * Last Modified: 2026-07-02 17:41:50
+ * Last Modified: 2026-07-02 20:29:32
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -25,6 +25,14 @@
 <template>
 
     <div ref="parentContainer" class="relative h-full w-full">
+        <!-- WebGL disabled warning -->
+        <div v-if="!WebGL.isWebGL2Available()" class="absolute inset-0 z-10 flex items-center justify-center">
+            <div class="flex items-center gap-3 text-sm rounded-xl shadow-md custom-glass-pill px-4 py-3 text-orange-500 border-orange-500/50!">
+                <PhWarning class="size-5 shrink-0" />
+                <span>WebGL is disabled or not supported :(</span>
+            </div>
+        </div>
+
         <!-- Renderer Canvas Container -->
         <div
             ref="canvasContainer"
@@ -53,9 +61,10 @@
 
 
 <script setup lang="ts">
-    import { PhArrowCounterClockwise } from "@phosphor-icons/vue";
+    import { PhArrowCounterClockwise, PhWarning } from "@phosphor-icons/vue";
     import * as threeJs from "three";
     import { GLTFLoader, type GLTF } from "three-stdlib";
+    import WebGL from "three/addons/capabilities/WebGL.js";
     import { onMounted, ref, type Ref } from "vue";
 
 
