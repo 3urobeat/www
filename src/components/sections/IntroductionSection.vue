@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 23:54:31
  * Author: 3urobeat
  *
- * Last Modified: 2026-07-02 17:42:27
+ * Last Modified: 2026-07-02 20:14:08
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -34,7 +34,7 @@
                 </div> -->
 
                 <!-- Interactive 3D Model -->
-                <div class="order-first lg:order-last w-40 h-90 md:w-55 md:h-105 lg:w-60 lg:h-110">
+                <div class="order-first lg:order-last w-45 h-90 md:w-60 md:h-105 lg:w-65 lg:h-110">
                     <ThreedModelViewer ref="viewerRef" modelUrl="/3d-model/mannequin.glb" :xRotationLimit="0.5" />
                 </div>
 
