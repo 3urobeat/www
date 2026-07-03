@@ -5,7 +5,7 @@
  * Created Date: 2026-06-14 15:11:49
  * Author: 3urobeat
  *
- * Last Modified: 2026-07-02 17:43:01
+ * Last Modified: 2026-07-04 00:55:36
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -34,7 +34,7 @@
                     :style="{ backgroundImage: `url(${backgroundImage})` }">
                 </div>
                 <div aria-hidden="true"
-                    class="fixed inset-0 h-3/4 bg-linear-to-b from-transparent to-bg-light dark:to-bg-dark">
+                    class="fixed inset-0 h-3/4 bg-linear-to-b from-transparent to-bg-light dark:to-bg-dark transition-colors/">
                 </div>
             </div>
 
