@@ -5,7 +5,7 @@
  * Created Date: 2026-01-31 17:03:57
  * Author: 3urobeat
  *
- * Last Modified: 2026-07-02 20:29:32
+ * Last Modified: 2026-07-05 10:21:52
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -83,7 +83,7 @@
     let rendererMouseX      = 0;
     let rendererMouseY      = 0;
 
-    const cameraPadding = 1;
+    const cameraPadding = 1.2;
 
 
     // Updates size of renderer if container got resized
