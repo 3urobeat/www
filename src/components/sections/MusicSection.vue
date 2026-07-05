@@ -5,7 +5,7 @@
  * Created Date: 2026-05-23 17:31:22
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 17:48:46
+ * Last Modified: 2026-07-05 10:01:40
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -95,7 +95,7 @@
 
             <!-- Introduction -->
             <p>
-                When not working on Software, I'm producing music from my home studio.
+                <span>When not working on Software, I'm producing music from my home studio.</span>
             </p>
             <p class="mt-2">
                 <span>
