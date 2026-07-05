@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:25:13
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-12 22:49:24
+ * Last Modified: 2026-07-05 10:05:33
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -161,7 +161,7 @@ ul {
 @keyframes blink-caret { 50% { border-color: transparent; } }
 
 .typing-animation {
-    @apply border-r-[.2ch] border-text-light dark:border-text-dark rounded-none;
+    @apply border-r-[.2ch] border-text-light dark:border-text-dark rounded-none will-change-transform;
     white-space: nowrap;
     display: inline-flex;
     overflow: hidden;

@@ -29,11 +29,11 @@
         </div>
 
         <!-- Falling particles animation -->
-        <div class="pointer-events-none absolute inset-0 overflow-hidden left-1/3" id="particles-animation">
+        <div class="pointer-events-none absolute inset-0 overflow-hidden left-1/2 will-change-transform" id="particles-animation">
             <div
                 v-for="p in particles"
                 :key="p.id"
-                class="particle"
+                class="particle will-change-transform"
                 :style="{
                     left: p.x + '%',
                     width: p.size + 'px',
@@ -74,7 +74,7 @@
     ];
 
     // Particles for rain animation
-    const particles = Array.from({ length: 30 }, (_, i) => ({
+    const particles = Array.from({ length: 20 }, (_, i) => ({
         id: i,
         x: Math.random() * 100,
         size: Math.random() * 6 + 1,
@@ -98,14 +98,8 @@
         0% {
             transform: translateY(-10px) translateX(0);
         }
-        25% {
-            transform: translateY(25vh) translateX(15px);
-        }
         50% {
-            transform: translateY(50vh) translateX(-10px);
-        }
-        75% {
-            transform: translateY(75vh) translateX(20px);
+            transform: translateY(50vh) translateX(15px);
         }
         100% {
             transform: translateY(105vh) translateX(-5px);
