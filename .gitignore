@@ -26,5 +26,5 @@ dist-ssr
 
 # Media and their project files
 misc/
-public/3d-model/mannequin.glb
+public/3d-model/mannequin.glb*
 src/assets/

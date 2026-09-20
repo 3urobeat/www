@@ -5,7 +5,7 @@
  * Created Date: 2026-06-14 12:14:43
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 17:50:02
+ * Last Modified: 2026-09-16 19:38:56
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -185,7 +185,7 @@
             name: "Contact",
             links: [
                 /* { label: "Email", url: "mailto:contact@3urobeat.com", icon: PhEnvelope, subtitle: "contact@3urobeat.com" } */
-                { label: "Email", url: "mailto:contact@goritz.org", icon: PhEnvelope, subtitle: "contact@goritz.org" }
+                { label: "Email", url: "mailto:contact@3urobeat.com", icon: PhEnvelope, subtitle: "contact@3urobeat.com" }
             ]
         }
     ];

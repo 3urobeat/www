@@ -5,7 +5,7 @@
  * Created Date: 2026-01-31 17:03:57
  * Author: 3urobeat
  *
- * Last Modified: 2026-07-05 10:21:52
+ * Last Modified: 2026-09-20 21:58:56
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -184,10 +184,10 @@
             canvasContainer.value!.appendChild(renderer.domElement);
 
             // Create some light so the model is viewable
-            const light = new threeJs.HemisphereLight(0xffffff, undefined, 1.5);
-            light.position.y = 5;
-            light.position.z = 5;
-            light.position.x = 5;
+            const light = new threeJs.SpotLight(0xffffff, 40);
+            light.position.y = 4;
+            light.position.z = 4;
+            light.position.x = 3;
             scene.add(light);
 
         } catch(err) {

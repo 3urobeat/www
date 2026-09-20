@@ -5,7 +5,7 @@
  * Created Date: 2026-05-25 22:28:19
  * Author: 3urobeat
  *
- * Last Modified: 2026-06-14 19:25:50
+ * Last Modified: 2026-09-16 19:38:56
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -28,7 +28,7 @@
         <div class="flex gap-4 right-0 self-end">
             <!-- Contact -->
             <a
-                href="mailto:contact@goritz.org"
+                href="mailto:contact@3urobeat.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center rounded-xl shadow-md hover:shadow-lg custom-glass-pill border-2! border-green-700! hover:border-green-500! hover:bg-green-500/30! gap-3 px-3 py-1.5 justify-center transition-all duration-300"
