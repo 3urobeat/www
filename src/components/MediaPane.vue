@@ -96,13 +96,20 @@
 
     @keyframes fall {
         0% {
-            transform: translateY(-10px) translateX(0);
+            transform: translate3d(0, -10px, 0);
         }
         50% {
-            transform: translateY(50vh) translateX(15px);
+            transform: translate3d(15px, 50vh, 0);
         }
         100% {
-            transform: translateY(105vh) translateX(-5px);
+            transform: translate3d(-5px, 105vh, 0);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .particle {
+            animation: none !important;
+            display: none;
         }
     }
 </style>
