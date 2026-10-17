@@ -4,7 +4,7 @@
  * Created Date: 2026-04-14 18:28:02
  * Author: 3urobeat
  *
- * Last Modified: 2026-04-14 18:29:31
+ * Last Modified: 2026-10-17 16:33:20
  * Modified By: 3urobeat
  *
  * Copyright (c) 2026 3urobeat <https://github.com/3urobeat>
@@ -18,7 +18,7 @@
 import { createApp } from "vue";
 import "./style.css";
 import app from "./app.vue";
-import { Observer } from "tailwindcss-intersect";
+import { Observer } from "tailwindcss-intersect/observer";
 
 createApp(app).mount("#app");
 
