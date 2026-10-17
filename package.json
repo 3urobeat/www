@@ -24,7 +24,7 @@
     "tailwindcss-intersect": "^2.2.0",
     "three": "^0.184.0",
     "three-stdlib": "^2.36.1",
-    "vue": "^3.5.32"
+    "vue": "^3.5.44"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
